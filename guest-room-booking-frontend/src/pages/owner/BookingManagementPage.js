@@ -40,7 +40,7 @@ function BookingManagementPage() {
       try {
         const { data } = await axios.put(`http://localhost:5000/api/bookings/${bookingId}/status`, { status: newStatus });
         setMessage(data.message || 'Booking status updated!');
-        fetchBookings(); // Re-fetch bookings to show updated status
+        fetchBookings(); 
       } catch (err) {
         console.error('Error updating status:', err.response?.data?.message || err.message);
         setError(err.response?.data?.message || 'Failed to update status.');
@@ -83,7 +83,7 @@ function BookingManagementPage() {
           </thead>
           <tbody>
             {bookings.map(booking => (
-              <tr key={booking._id} data-label=""> {/* Add data-label for mobile */}
+              <tr key={booking._id} data-label=""> 
                 <td data-label="Room Name">{booking.room?.name || 'N/A'}</td>
                 <td data-label="Customer Email">{booking.customer?.email || 'N/A'}</td>
                 <td data-label="Check-in">{new Date(booking.checkInDate).toLocaleDateString()}</td>
