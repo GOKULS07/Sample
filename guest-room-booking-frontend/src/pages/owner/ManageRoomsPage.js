@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './ManageRoomsPage.css';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Import axios
-import { useAuth } from '../../contexts/AuthContext'; // Import useAuth
+import axios from 'axios'; 
+import { useAuth } from '../../contexts/AuthContext';
 
 function ManageRoomsPage() {
   const navigate = useNavigate();
-  const { user, isAuthenticated } = useAuth(); // Need auth state for user-specific rooms
+  const { user, isAuthenticated } = useAuth(); 
   const [rooms, setRooms] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ function ManageRoomsPage() {
     const fetchOwnerRooms = async () => {
       if (!isAuthenticated || !user) {
         setLoading(false);
-        return; // Don't fetch if not authenticated
+        return; 
       }
       try {
         const { data } = await axios.get('http://localhost:5000/api/rooms/owner-rooms/me');
@@ -28,14 +28,14 @@ function ManageRoomsPage() {
       }
     };
     fetchOwnerRooms();
-  }, [isAuthenticated, user]); // Re-fetch if auth state changes
+  }, [isAuthenticated, user]); 
 
   const handleDelete = async (roomId) => {
     if (window.confirm('Are you sure you want to delete this room?')) {
       try {
         await axios.delete(`http://localhost:5000/api/rooms/${roomId}`);
         alert('Room deleted successfully!');
-        setRooms(rooms.filter(room => room._id !== roomId)); // Remove from UI
+        setRooms(rooms.filter(room => room._id !== roomId)); 
       } catch (err) {
         console.error('Error deleting room:', err.response?.data?.message || err.message);
         setError(err.response?.data?.message || 'Failed to delete room.');
