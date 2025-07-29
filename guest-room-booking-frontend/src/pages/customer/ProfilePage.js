@@ -1,6 +1,6 @@
-// src/pages/customer/ProfilePage.js
+
 import React, { useState, useEffect } from 'react';
-import './ProfilePage.css'; // This is a new CSS file for customer profile, similar to owner's
+import './ProfilePage.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../../contexts/AuthContext';
@@ -9,7 +9,7 @@ function ProfilePage() {
   const navigate = useNavigate();
   const { user, token, logout } = useAuth();
   const [formData, setFormData] = useState({
-    fullName: '', // Assuming you might add this to User model
+    fullName: '', 
     email: '',
     mobileNumber: '',
     password: '',
