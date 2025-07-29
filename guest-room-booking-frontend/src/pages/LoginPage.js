@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate, Link, useLocation } from 'react-router-dom'; // <--- ADD useLocation HERE
+import { useNavigate, Link, useLocation } from 'react-router-dom'; 
 
 function LoginPage() {
   const [email, setEmail] = useState('');
