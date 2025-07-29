@@ -3,8 +3,8 @@ import './BookingPage.css';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../../contexts/AuthContext';
-import DatePicker from 'react-datepicker'; // Import DatePicker
-import 'react-datepicker/dist/react-datepicker.css'; // Import datepicker styles
+import DatePicker from 'react-datepicker'; 
+import 'react-datepicker/dist/react-datepicker.css'; 
 
 function BookingPage() {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ function BookingPage() {
   const [totalNights, setTotalNights] = useState(0);
   const [bookedDates, setBookedDates] = useState([]);
 
-  // Fetch room details and existing bookings for the calendar
+
   useEffect(() => {
     const fetchRoomAndBookings = async () => {
       try {
@@ -58,7 +58,7 @@ function BookingPage() {
     fetchRoomAndBookings();
   }, [roomId, navigate]);
 
-  // Calculate total price and nights when dates or room data changes
+
   useEffect(() => {
     if (room && startDate && endDate) {
       const start = startDate;
@@ -112,7 +112,7 @@ function BookingPage() {
       return;
     }
 
-    // Double-check for overlaps with already booked dates (frontend check before API)
+
     const isOverlap = bookedDates.some(bookedDate => {
       const selectedStart = startDate.setHours(0,0,0,0);
       const selectedEnd = endDate.setHours(0,0,0,0);
