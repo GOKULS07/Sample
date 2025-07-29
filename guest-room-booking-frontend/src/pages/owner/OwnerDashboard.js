@@ -7,9 +7,9 @@ import { useAuth } from '../../contexts/AuthContext';
 function OwnerDashboard() {
   const navigate = useNavigate();
   const { user, isAuthenticated } = useAuth();
-  const [roomsCount, setRoomsCount] = useState(0); // For total rooms listed
-  const [upcomingBookingsCount, setUpcomingBookingsCount] = useState(0); // For dynamic upcoming bookings
-  const [recentBookings, setRecentBookings] = useState([]); // For recent activity list
+  const [roomsCount, setRoomsCount] = useState(0); 
+  const [upcomingBookingsCount, setUpcomingBookingsCount] = useState(0); 
+  const [recentBookings, setRecentBookings] = useState([]); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -20,15 +20,15 @@ function OwnerDashboard() {
         return;
       }
       try {
-        // Fetch Owner's Rooms Count
+        
         const roomsResponse = await axios.get('http://localhost:5000/api/rooms/owner-rooms/me');
         setRoomsCount(roomsResponse.data.count);
 
-        // Fetch Owner's Bookings
+        
         const bookingsResponse = await axios.get('http://localhost:5000/api/bookings/owner/me');
         const allBookings = bookingsResponse.data.data;
 
-        // Filter for upcoming bookings
+        
         const now = new Date();
         const upcoming = allBookings.filter(booking => {
           const checkIn = new Date(booking.checkInDate);
@@ -36,9 +36,9 @@ function OwnerDashboard() {
         });
         setUpcomingBookingsCount(upcoming.length);
 
-        // Get most recent bookings for activity list (e.g., top 3)
+        
         const sortedBookings = allBookings.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        setRecentBookings(sortedBookings.slice(0, 3)); // Take top 3 most recent
+        setRecentBookings(sortedBookings.slice(0, 3)); 
 
         setLoading(false);
 
@@ -101,7 +101,7 @@ function OwnerDashboard() {
           ) : (
             <li>No recent booking activity.</li>
           )}
-          {/* Keeping a dummy for other activities if needed in the future */}
+          
           <li>"Spacious Family Home" was updated. (Dummy)</li>
           <li>Booking for "Downtown Studio" completed on July 20. (Dummy)</li>
         </ul>
