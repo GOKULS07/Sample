@@ -36,7 +36,7 @@ function AddRoomPage() {
     setLoading(true);
     setError(null);
 
-    // Client-side validation before sending
+   
     if (!selectedFile) {
       setError('Please select an image file for the room.');
       setLoading(false);
