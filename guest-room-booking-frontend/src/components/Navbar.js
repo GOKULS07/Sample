@@ -23,11 +23,11 @@ function Navbar() {
         <Link to="/">Room Booker</Link>
       </div>
 
-      {/* Main Navigation Links - will be centered */}
+      
       <ul className="nav-main-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/rooms">Browse Rooms</Link></li>
-        {/* Conditional "My Bookings" and "Profile" links will now appear here when authenticated */}
+       
         {isAuthenticated && (
           <>
             {isCustomer && <li><Link to="/customer/dashboard">My Bookings</Link></li>}
@@ -37,7 +37,7 @@ function Navbar() {
         )}
       </ul>
 
-      {/* Auth/Logout Buttons - will be on the far right */}
+     
       <ul className="nav-auth-links">
         {isAuthenticated ? (
           <li>
