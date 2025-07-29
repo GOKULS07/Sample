@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './LoginPage.css'; // Reusing CSS from Login Page
+import './LoginPage.css'; 
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 
 function RegisterPage() {
   const [email, setEmail] = useState('');
-  const [mobile, setMobile] = useState(''); // Retained as 'mobile' for clarity
+  const [mobile, setMobile] = useState(''); 
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('customer');
   const [loading, setLoading] = useState(false);
@@ -22,7 +22,7 @@ function RegisterPage() {
       return;
     }
 
-    const userData = { email, mobile, password, role }; // mobile to match backend mobileNumber
+    const userData = { email, mobile, password, role }; 
     const { success, message } = await register(userData);
 
     if (success) {
@@ -52,7 +52,7 @@ function RegisterPage() {
         <div className="form-group">
           <label htmlFor="mobile">Mobile Number:</label>
           <input
-            type="tel" // Changed to tel type
+            type="tel" 
             id="mobile"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
