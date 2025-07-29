@@ -34,7 +34,7 @@ function RoomDetailsPage() {
     if (!isAuthenticated) {
       navigate('/login', { state: { from: `/rooms/${id}` } });
     } else if (isCustomer) {
-      // Navigate to booking page with just the room ID
+     
       navigate(`/customer/book/${room._id}`);
     } else {
       alert("House Owners cannot book rooms for themselves through this portal.");
@@ -61,7 +61,7 @@ function RoomDetailsPage() {
     <div className="page-container">
       <button onClick={handleBack} className="back-button">← Back</button>
       <h2 className="page-title">Room Details: {room.name}</h2>
-      <div className="room-details-top-section"> {/* Keep this container for image and info side-by-side */}
+      <div className="room-details-top-section"> 
         <div className="room-details-image-container">
           <img src={room.photos[0] || 'https://via.placeholder.com/800x400?text=No+Image'} alt={room.name} className="room-details-image" />
         </div>
@@ -84,13 +84,13 @@ function RoomDetailsPage() {
             <strong>Min/Max Stay:</strong> {room.minBookingDays}-{room.maxBookingDays} days
           </div>
 
-          {/* This is the only "Book Now" button on this page */}
+          
           <button onClick={handleBookNow} className="primary-button room-details-book-button">
             Book Now
           </button>
         </div>
       </div>
-      {/* Calendar section is completely removed from here */}
+     
 
       <div className="back-link-container">
         <Link to="/rooms" className="back-link">← Back to Room Listings</Link>
