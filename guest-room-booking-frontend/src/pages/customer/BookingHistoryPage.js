@@ -40,7 +40,7 @@ function BookingHistoryPage() {
       try {
         const { data } = await axios.put(`http://localhost:5000/api/bookings/${bookingId}/cancel`);
         setMessage(data.message || 'Booking cancelled successfully!');
-        fetchBookings(); // Re-fetch to update status
+        fetchBookings(); 
       } catch (err) {
         console.error('Error cancelling booking:', err.response?.data?.message || err.message);
         setError(err.response?.data?.message || 'Failed to cancel booking.');
