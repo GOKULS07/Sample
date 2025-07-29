@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './RoomListPage.css';
 import { Link } from 'react-router-dom';
-import axios from 'axios'; // Import axios
+import axios from 'axios'; 
 
 function RoomListPage() {
   const [rooms, setRooms] = useState([]);
@@ -11,7 +11,7 @@ function RoomListPage() {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/rooms'); // Fetch from backend
+        const { data } = await axios.get('http://localhost:5000/api/rooms');
         setRooms(data.data);
         setLoading(false);
       } catch (err) {
