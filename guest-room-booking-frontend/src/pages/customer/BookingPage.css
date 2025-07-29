@@ -1,0 +1,375 @@
+.booking-page-container {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking-main-content-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.booking-summary-card {
+  background-color: var(--light-bg-offwhite);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 6px 20px var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  flex: 1;
+  min-width: 350px;
+  max-width: calc(50% - 1.25rem);
+  height: fit-content;
+}
+
+.payment-info-section {
+  background-color: var(--light-bg-offwhite);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 6px 20px var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.booking-summary-card h3,
+.payment-info-section h3,
+.availability-title {
+  font-size: 1.8rem;
+  color: var(--primary-dark-blue);
+  margin-bottom: 1.8rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.detail-row span {
+  font-weight: 500;
+}
+
+.detail-row strong {
+  font-weight: 600;
+}
+
+.total-price-row {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border-light);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-dark-blue);
+}
+
+.total-price {
+  color: var(--accent-orange);
+}
+
+.payment-info-section p {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.confirm-booking-button {
+  width: auto;
+  min-width: 200px;
+  margin: 0 auto;
+  display: block;
+  padding: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: var(--accent-teal);
+  color: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.confirm-booking-button:hover {
+  background-color: #006666;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--primary-dark-blue);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: var(--accent-orange);
+}
+
+.nights-summary {
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary-dark-blue);
+  margin-top: 1rem;
+}
+
+.payment-note {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Calendar Section Styles */
+.availability-full-width-section {
+  width: 100%;
+  max-width: 800px; /* Increased max-width for the entire calendar card */
+  margin: 2rem auto;
+  background-color: var(--light-bg-offwhite);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 30px var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.availability-calendar-wrapper {
+  width: 100%;
+  max-width: 680px; /* Increased max-width for the actual calendar wrapper */
+  display: flex;
+  justify-content: center;
+}
+
+.react-datepicker {
+  font-family: 'Inter', sans-serif;
+  border: none;
+  box-shadow: none;
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  padding: 15px;
+  border: 1px solid var(--border-light);
+  width: 100%;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  gap: 25px; /* Increased gap between months */
+}
+
+.react-datepicker__month-container {
+  display: block;
+  vertical-align: top;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.react-datepicker__header {
+  background-color: var(--primary-dark-blue);
+  border-bottom: none;
+  padding-top: 15px;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: var(--white);
+  font-size: 1.1rem;
+}
+
+.react-datepicker__month {
+  padding: 15px;
+}
+
+.react-datepicker__day {
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin: 0.25rem;
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 1.05rem;
+}
+
+.react-datepicker__day--outside-month {
+  color: var(--text-light);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range {
+  background-color: var(--accent-teal);
+  color: var(--white);
+  border-radius: var(--border-radius-sm);
+}
+
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__day:hover {
+  background-color: #006666;
+  color: var(--white);
+  border-radius: var(--border-radius-sm);
+}
+
+.react-datepicker__day--disabled {
+  color: var(--text-light);
+  cursor: not-allowed;
+  background-color: var(--light-bg-offwhite);
+  opacity: 0.6;
+}
+.react-datepicker__day--disabled:hover {
+  background-color: var(--light-bg-offwhite);
+  color: var(--text-light);
+}
+
+.react-datepicker__navigation {
+  top: 18px;
+  left: 30px; /* Increased space from the left edge for navigation */
+  right: 30px; /* Increased space from the right edge for navigation */
+  width: 25px; /* Ensure sufficient width for arrow */
+  height: 25px; /* Ensure sufficient height for arrow */
+  text-align: center;
+  line-height: 25px;
+}
+.react-datepicker__navigation--previous {
+  border-right-color: var(--white);
+}
+.react-datepicker__navigation--next {
+  border-left-color: var(--white);
+}
+/* Ensure navigation icons are properly sized */
+.react-datepicker__navigation-icon::before {
+  border-color: var(--white);
+  border-width: 2px 2px 0 0; /* Slightly thicker borders for icon */
+  height: 10px; /* Larger icon */
+  width: 10px; /* Larger icon */
+}
+
+
+.react-datepicker__day--selecting-range-start,
+.react-datepicker__day--selecting-range-end {
+  background-color: var(--accent-teal) !important;
+  color: var(--white) !important;
+}
+
+.react-datepicker__day--range-start,
+.react-datepicker__day--range-end {
+  background-color: var(--accent-teal) !important;
+  color: var(--white) !important;
+}
+
+
+/* Responsive adjustments for BookingPage */
+@media (max-width: 1024px) {
+  .booking-page-container {
+    max-width: 750px; /* Reduced max-width for tablets to ensure better fit */
+  }
+  /* Calendar months will naturally stack here due to flex-wrap if container is narrow */
+  .react-datepicker {
+    flex-direction: column !important; /* Force vertical stacking on tablets */
+    gap: 0; /* No gap when stacking */
+  }
+  .react-datepicker__month {
+    margin: 0 auto; /* Center individual month when stacked */
+    width: 100%; /* Take full width */
+    padding: 15px 0; /* Adjust vertical padding */
+  }
+  .react-datepicker__navigation {
+    left: 20px; /* Adjusted nav spacing */
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-page-container {
+    padding: 1.5rem;
+  }
+  .booking-summary-card,
+  .payment-info-section,
+  .availability-full-width-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--border-radius-md);
+  }
+  .booking-summary-card h3,
+  .payment-info-section h3,
+  .availability-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+  }
+  .detail-row {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .total-price-row {
+    font-size: 1.2rem;
+  }
+  .confirm-booking-button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+  .back-button {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .react-datepicker__day {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+  }
+  .react-datepicker__navigation {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-page-container {
+    padding: 1rem;
+  }
+  .booking-summary-card h3,
+  .payment-info-section h3,
+  .availability-title {
+    font-size: 1.4rem;
+  }
+  .detail-row {
+    font-size: 0.95rem;
+  }
+  .total-price-row {
+    font-size: 1.1rem;
+  }
+  .confirm-booking-button {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+  .react-datepicker {
+    font-size: 0.8em;
+    padding: 10px;
+  }
+  .react-datepicker__day {
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    font-size: 0.9rem;
+  }
+}

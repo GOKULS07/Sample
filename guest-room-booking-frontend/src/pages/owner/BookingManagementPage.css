@@ -1,0 +1,199 @@
+.booking-management-container {
+  max-width: 1000px;
+}
+
+.no-bookings-message {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  padding: 4rem;
+  border: 2px dashed var(--border-light);
+  border-radius: var(--border-radius-md);
+  margin-top: 2.5rem;
+  background-color: var(--light-bg-offwhite);
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 2.5rem;
+  box-shadow: 0 6px 20px var(--shadow-sm);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.bookings-table th,
+.bookings-table td {
+  padding: 1.4rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.bookings-table th {
+  background-color: var(--primary-dark-blue);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bookings-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.bookings-table tbody tr:hover {
+  background-color: var(--light-bg-offwhite);
+}
+
+.booking-status {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  color: var(--white);
+  display: inline-block;
+}
+
+.booking-status.pending {
+  background-color: var(--accent-orange);
+}
+.booking-status.confirmed {
+  background-color: var(--primary-dark-blue);
+}
+.booking-status.completed {
+  background-color: var(--text-light);
+}
+.booking-status.cancelled {
+  background-color: #DC3545;
+}
+
+
+.action-button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--white);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.confirm-button {
+  background-color: var(--accent-teal);
+}
+.confirm-button:hover {
+  background-color: #006666;
+  transform: translateY(-2px);
+}
+
+.complete-button {
+  background-color: var(--primary-dark-blue);
+}
+.complete-button:hover {
+  background-color: #11115e;
+  transform: translateY(-2px);
+}
+
+.cancel-button {
+  background-color: #DC3545;
+}
+.cancel-button:hover {
+  background-color: #C82333;
+  transform: translateY(-2px);
+}
+
+
+.success-message {
+  color: #28A745;
+  background-color: #D4EDDA;
+  border: 1px solid #C3E6CB;
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--primary-dark-blue);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: var(--accent-teal);
+}
+
+@media (max-width: 1024px) {
+  .bookings-table th,
+  .bookings-table td {
+    padding: 1.2rem 1rem;
+    font-size: 0.95rem;
+  }
+  .booking-status {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  .action-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bookings-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-radius: var(--border-radius-md);
+  }
+  .bookings-table thead, .bookings-table tbody, .bookings-table th, .bookings-table td, .bookings-table tr {
+    display: block;
+  }
+  .bookings-table th {
+    text-align: right;
+    padding: 1rem;
+  }
+  .bookings-table td {
+    border-bottom: 1px solid var(--border-light);
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    padding: 1rem;
+  }
+  .bookings-table td:before {
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label);
+    font-weight: 600;
+    text-align: left;
+    color: var(--text-dark);
+  }
+  .bookings-table td:nth-of-type(1):before { content: "Room Name"; }
+  .bookings-table td:nth-of-type(2):before { content: "Customer Email"; }
+  .bookings-table td:nth-of-type(3):before { content: "Check-in"; }
+  .bookings-table td:nth-of-type(4):before { content: "Check-out"; }
+  .bookings-table td:nth-of-type(5):before { content: "Status"; }
+  .bookings-table td:nth-of-type(6):before { content: "Actions"; }
+
+  .action-button {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    margin-right: 0;
+  }
+}

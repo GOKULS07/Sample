@@ -1,0 +1,203 @@
+/* Container for the image and room info (top section) */
+.room-details-top-section {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.room-details-image-container {
+  flex: 1.5;
+  min-width: 350px;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 30px var(--shadow-md);
+  height: fit-content;
+  align-self: flex-start;
+}
+
+.room-details-image {
+  width: 100%;
+  max-height: 450px;
+  height: auto;
+  min-height: 250px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--border-radius-lg);
+}
+
+.room-details-info {
+  flex: 1;
+  min-width: 400px;
+  background-color: var(--light-bg-offwhite);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 15px var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.room-details-info h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-dark-blue);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.room-description {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.detail-item {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.9rem;
+}
+
+.detail-item strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.room-details-book-button {
+  width: auto;
+  min-width: 180px;
+  margin-top: 2.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  align-self: flex-end;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--accent-teal); /* Use accent-teal for this button */
+  color: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.room-details-book-button:hover {
+  background-color: #006666; /* Darker teal on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.back-link-container {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.back-link {
+  color: var(--primary-dark-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.15rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--accent-orange);
+  text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .room-details-image-container {
+    max-width: 550px;
+  }
+  .room-details-info {
+    min-width: 350px;
+    padding: 2.2rem;
+  }
+  .room-details-info h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .room-details-top-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .room-details-image-container {
+    max-width: 90%;
+    min-width: unset;
+    height: auto;
+  }
+  .room-details-image {
+    height: 350px;
+  }
+  .room-details-info {
+    max-width: 90%;
+    min-width: unset;
+    padding: 2rem;
+  }
+  .room-details-info h3 {
+    font-size: 1.8rem;
+  }
+  .room-description {
+    font-size: 1.05rem;
+  }
+  .room-details-book-button {
+    width: 100%;
+    align-self: center;
+    padding: 1.1rem;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .room-details-top-section {
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  .room-details-image {
+    height: 280px;
+  }
+  .room-details-info {
+    padding: 1.5rem;
+  }
+  .room-details-info h3 {
+    font-size: 1.6rem;
+  }
+  .room-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .detail-item {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+  .room-details-book-button {
+    padding: 0.9rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .room-details-image {
+    height: 220px;
+  }
+  .room-details-info {
+    padding: 1rem;
+  }
+  .room-details-info h3 {
+    font-size: 1.4rem;
+  }
+  .room-details-book-button {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}

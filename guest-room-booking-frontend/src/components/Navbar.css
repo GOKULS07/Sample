@@ -1,0 +1,215 @@
+.navbar {
+  background-color: var(--white);
+  padding: 1.2rem 2.5rem;
+  box-shadow: 0 4px 15px var(--shadow-sm);
+  display: flex;
+  justify-content: space-between; /* Pushes brand left, auth right, main links will be centered with margin auto */
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand {
+  flex-shrink: 0; /* Don't shrink brand */
+}
+
+.nav-brand a {
+  color: var(--primary-dark-blue);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Main Navigation Links - to be centered */
+.nav-main-links {
+  list-style: none;
+  margin: 0 auto; /* This centers the element within a flex container */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allows it to grow and push brand/auth links to edges */
+  justify-content: center; /* Ensures links within it are centered if space available */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.nav-main-links li {
+  margin: 0 1.2rem; /* Reduced horizontal margin for main links */
+}
+
+.nav-main-links li a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-main-links li a:hover {
+  color: var(--accent-teal);
+  transform: translateY(-2px);
+}
+
+.nav-main-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-teal);
+  transition: width 0.3s ease;
+}
+
+.nav-main-links li a:hover::after {
+  width: 100%;
+}
+
+/* Auth/Logout Links - to be on the far right */
+.nav-auth-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Prevent shrinking auth links */
+}
+
+.nav-auth-links li {
+  margin-left: 1.5rem; /* Space between Login/Register or Logout button */
+}
+
+.nav-auth-links li a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-auth-links li a:hover {
+  color: var(--accent-teal);
+  transform: translateY(-2px);
+}
+
+.nav-auth-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-teal);
+  transition: width 0.3s ease;
+}
+
+.nav-auth-links li a:hover::after {
+  width: 100%;
+}
+
+/* Red Logout Button Styling */
+.navbar-logout-button {
+  background: none;
+  border: none;
+  color: #DC3545; /* Red color for logout */
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  display: flex; /* Allow emoji and text to sit nicely */
+  align-items: center;
+  gap: 5px; /* Space between emoji and text */
+  transition: color 0.3s ease;
+}
+
+.navbar-logout-button:hover {
+  color: #C82333; /* Darker red on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .nav-brand a {
+    font-size: 1.8rem;
+  }
+  .nav-main-links li {
+    margin: 0 0.8rem;
+  }
+  .nav-main-links li a, .nav-auth-links li a {
+    font-size: 1rem;
+  }
+  .nav-auth-links li {
+    margin-left: 1rem;
+  }
+  .navbar-logout-button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center horizontally */
+    padding: 1rem 1.5rem;
+  }
+  .nav-brand {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .nav-main-links {
+    flex-direction: column;
+    width: 100%;
+    margin: 0; /* Reset margin auto */
+    padding: 0;
+    align-items: center;
+    order: 2; /* Put main links below brand and auth links if needed */
+  }
+  .nav-main-links li {
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-main-links li a, .nav-auth-links li a {
+    padding: 0.8rem 0;
+    display: block;
+  }
+  .nav-main-links li a::after, .nav-auth-links li a::after {
+    display: none;
+  }
+  .nav-auth-links {
+    width: 100%;
+    justify-content: center; /* Center auth links too */
+    margin-top: 0.5rem;
+    order: 3; /* Put auth links at the very bottom */
+  }
+  .nav-auth-links li {
+    margin: 0 0.5rem; /* Small horizontal margin */
+  }
+  .navbar-logout-button {
+    padding: 0.5rem 0;
+    width: auto;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+  .nav-brand a {
+    font-size: 1.6rem;
+  }
+  .nav-main-links li a, .nav-auth-links li a {
+    font-size: 0.95rem;
+  }
+}
