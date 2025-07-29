@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './AddRoomPage.css'; // Reusing AddRoomPage CSS
+import './AddRoomPage.css'; 
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useAuth } from '../../contexts/AuthContext'; // CORRECTED PATH
+import { useAuth } from '../../contexts/AuthContext'; 
 
 function EditRoomPage() {
   const { id } = useParams();
