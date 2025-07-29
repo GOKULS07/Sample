@@ -1,4 +1,4 @@
-/* Container for the image and room info (top section) */
+
 .room-details-top-section {
   display: flex;
   gap: 2.5rem;
@@ -79,14 +79,14 @@
   font-weight: 700;
   align-self: flex-end;
   border-radius: var(--border-radius-sm);
-  background-color: var(--accent-teal); /* Use accent-teal for this button */
+  background-color: var(--accent-teal); 
   color: var(--white);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .room-details-book-button:hover {
-  background-color: #006666; /* Darker teal on hover */
+  background-color: #006666; 
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
