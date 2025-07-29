@@ -9,11 +9,11 @@ import RoomListPage from './pages/RoomListPage';
 import RoomDetailsPage from './pages/RoomDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
-// Import AuthProvider and ProtectedRoute
+
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
-// House Owner Pages (now imported from src/pages/owner/)
+
 import OwnerDashboard from './pages/owner/OwnerDashboard';
 import AddRoomPage from './pages/owner/AddRoomPage';
 import ManageRoomsPage from './pages/owner/ManageRoomsPage';
@@ -21,7 +21,7 @@ import EditRoomPage from './pages/owner/EditRoomPage';
 import BookingManagementPage from './pages/owner/BookingManagementPage';
 import OwnerProfilePage from './pages/owner/ProfilePage';
 
-// Customer Pages (now imported from src/pages/customer/)
+
 import CustomerDashboard from './pages/customer/CustomerDashboard';
 import BookingPage from './pages/customer/BookingPage';
 import BookingHistoryPage from './pages/customer/BookingHistoryPage';
@@ -30,17 +30,17 @@ import CustomerProfilePage from './pages/customer/ProfilePage';
 function App() {
   return (
     <Router>
-      <AuthProvider> {/* Wrap the entire application with AuthProvider */}
+      <AuthProvider> 
         <Navbar />
         <Routes>
-          {/* Public Routes */}
+          
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/rooms" element={<RoomListPage />} />
           <Route path="/rooms/:id" element={<RoomDetailsPage />} />
 
-          {/* Protected Routes for House Owners */}
+        
           <Route path="/owner/dashboard" element={
             <ProtectedRoute allowedRoles={['house_owner']}>
               <OwnerDashboard />
@@ -72,7 +72,7 @@ function App() {
             </ProtectedRoute>
           } />
 
-          {/* Protected Routes for Customers */}
+          
           <Route path="/customer/dashboard" element={
             <ProtectedRoute allowedRoles={['customer']}>
               <CustomerDashboard />
@@ -94,7 +94,7 @@ function App() {
             </ProtectedRoute>
           } />
 
-          {/* Catch-all 404 Route */}
+       
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </AuthProvider>
