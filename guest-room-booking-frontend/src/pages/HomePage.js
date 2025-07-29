@@ -12,7 +12,7 @@ function HomePage() {
           <p>Seamlessly connect with house owners for short-term room rentals. Your ideal guest experience starts here.</p>
           <div className="hero-buttons">
             <Link to="/rooms" className="primary-button hero-button-primary">Explore Rooms</Link>
-            {/* Removed: <Link to="/register" className="secondary-button hero-button-secondary">List Your Property</Link> */}
+           
           </div>
         </div>
       </header>
