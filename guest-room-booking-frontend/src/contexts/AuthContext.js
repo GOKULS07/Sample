@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import axios from 'axios'; // Import axios
+import axios from 'axios'; 
 
 const AuthContext = createContext(null);
 
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
   });
   const [token, setToken] = useState(() => localStorage.getItem('token') || null);
 
-  // Set default headers for all axios requests if a token exists
+  
   useEffect(() => {
     if (token) {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
     }
   }, [token]);
 
-  const login = async (email, password) => { // Changed emailOrMobile to email as backend uses email
+  const login = async (email, password) => {
     try {
       const config = {
         headers: {
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
         },
       };
       const { data } = await axios.post(
-        'http://localhost:5000/api/auth/login', // Your backend login endpoint
+        'http://localhost:5000/api/auth/login', 
         { email, password },
         config
       );
@@ -56,19 +56,12 @@ export const AuthProvider = ({ children }) => {
           'Content-Type': 'application/json',
         },
       };
-      // Corrected to send mobileNumber explicitly and ensure password is in data
+     
       const { data } = await axios.post(
         'http://localhost:5000/api/auth/register', // Your backend register endpoint
         { email: userData.email, password: userData.password, mobileNumber: userData.mobile, role: userData.role },
         config
       );
-
-      // Registration typically doesn't auto-login or return a token if separate flow
-      // If backend sends token, you can handle it here:
-      // setUser(data.user);
-      // setToken(data.token);
-      // localStorage.setItem('user', JSON.stringify(data.user));
-      // localStorage.setItem('token', data.token);
 
       return { success: true, message: data.message || 'Registration successful' };
     } catch (error) {
@@ -82,7 +75,7 @@ export const AuthProvider = ({ children }) => {
     setToken(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
-    delete axios.defaults.headers.common['Authorization']; // Remove auth header on logout
+    delete axios.defaults.headers.common['Authorization']; 
     console.log('User logged out.');
   };
 
