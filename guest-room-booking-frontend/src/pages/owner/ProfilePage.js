@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './ProfilePage.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useAuth } from '../../contexts/AuthContext'; // Ensure correct path
+import { useAuth } from '../../contexts/AuthContext'; 
 
 function ProfilePage() {
   const navigate = useNavigate();
-  const { user, token, logout } = useAuth(); // Get user and logout from context
+  const { user, token, logout } = useAuth(); 
   const [formData, setFormData] = useState({
-    fullName: '', // Assuming you might add this to User model
+    fullName: '',
     email: '',
     mobileNumber: '',
     password: '',
-    newPassword: '', // For password change
+    newPassword: '',
   });
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -21,17 +21,17 @@ function ProfilePage() {
 
   useEffect(() => {
     const fetchProfile = async () => {
-      if (!user) { // Don't fetch if user not logged in (though ProtectedRoute should prevent)
+      if (!user) { 
         setLoading(false);
         return;
       }
       try {
         const { data } = await axios.get('http://localhost:5000/api/auth/me');
         setFormData({
-          fullName: data.data.fullName || 'N/A', // Adjust if fullName is in backend
+          fullName: data.data.fullName || 'N/A', 
           email: data.data.email,
           mobileNumber: data.data.mobileNumber,
-          password: '', // Password is never pre-filled for security
+          password: '', 
           newPassword: '',
         });
         setLoading(false);
@@ -39,7 +39,7 @@ function ProfilePage() {
         console.error('Error fetching profile:', err);
         setError('Failed to load profile data.');
         setLoading(false);
-        // If 401, token might be invalid, logout
+        
         if (err.response && err.response.status === 401) {
           logout();
           navigate('/login');
@@ -66,13 +66,12 @@ function ProfilePage() {
     if (formData.newPassword) {
       updateData.password = formData.newPassword;
     }
-    // If you add fullName to backend User model, include it here:
-    // updateData.fullName = formData.fullName;
+   
 
     try {
       const { data } = await axios.put('http://localhost:5000/api/auth/profile', updateData);
       setMessage(data.message || 'Profile updated successfully!');
-      setFormData({ ...formData, password: '', newPassword: '' }); // Clear password fields
+      setFormData({ ...formData, password: '', newPassword: '' });
     } catch (err) {
       console.error('Error updating profile:', err.response?.data?.message || err.message);
       setError(err.response?.data?.message || 'Failed to update profile.');
@@ -100,13 +99,7 @@ function ProfilePage() {
       <form className="profile-form" onSubmit={handleSubmit}>
         {error && <p className="error-message">{error}</p>}
         {message && <p className="success-message">{message}</p>}
-        {/* If you add fullName to User model, uncomment below */}
-        {/*
-        <div className="form-group">
-          <label htmlFor="fullName">Full Name:</label>
-          <input type="text" id="fullName" value={formData.fullName} onChange={handleChange} required disabled={submitting} />
-        </div>
-        */}
+       
         <div className="form-group">
           <label htmlFor="email">Email Address:</label>
           <input type="email" id="email" value={formData.email} onChange={handleChange} required disabled={submitting} />
