@@ -3,7 +3,7 @@
   padding: 1.2rem 2.5rem;
   box-shadow: 0 4px 15px var(--shadow-sm);
   display: flex;
-  justify-content: space-between; /* Pushes brand left, auth right, main links will be centered with margin auto */
+  justify-content: space-between; 
   align-items: center;
   flex-wrap: wrap;
   position: sticky;
@@ -12,7 +12,7 @@
 }
 
 .nav-brand {
-  flex-shrink: 0; /* Don't shrink brand */
+  flex-shrink: 0; 
 }
 
 .nav-brand a {
@@ -24,20 +24,20 @@
   letter-spacing: -0.02em;
 }
 
-/* Main Navigation Links - to be centered */
+
 .nav-main-links {
   list-style: none;
-  margin: 0 auto; /* This centers the element within a flex container */
+  margin: 0 auto; 
   padding: 0;
   display: flex;
   align-items: center;
-  flex-grow: 1; /* Allows it to grow and push brand/auth links to edges */
-  justify-content: center; /* Ensures links within it are centered if space available */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-grow: 1; 
+  justify-content: center; 
+  flex-wrap: wrap;
 }
 
 .nav-main-links li {
-  margin: 0 1.2rem; /* Reduced horizontal margin for main links */
+  margin: 0 1.2rem; 
 }
 
 .nav-main-links li a {
@@ -70,18 +70,18 @@
   width: 100%;
 }
 
-/* Auth/Logout Links - to be on the far right */
+
 .nav-auth-links {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
-  flex-shrink: 0; /* Prevent shrinking auth links */
+  flex-shrink: 0; 
 }
 
 .nav-auth-links li {
-  margin-left: 1.5rem; /* Space between Login/Register or Logout button */
+  margin-left: 1.5rem; 
 }
 
 .nav-auth-links li a {
@@ -114,26 +114,26 @@
   width: 100%;
 }
 
-/* Red Logout Button Styling */
+
 .navbar-logout-button {
   background: none;
   border: none;
-  color: #DC3545; /* Red color for logout */
+  color: #DC3545; 
   font-size: 1.05rem;
   font-weight: 500;
   cursor: pointer;
   padding: 0;
-  display: flex; /* Allow emoji and text to sit nicely */
+  display: flex; 
   align-items: center;
-  gap: 5px; /* Space between emoji and text */
+  gap: 5px; 
   transition: color 0.3s ease;
 }
 
 .navbar-logout-button:hover {
-  color: #C82333; /* Darker red on hover */
+  color: #C82333; 
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 1024px) {
   .navbar {
     padding: 1rem 2rem;
@@ -157,8 +157,8 @@
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* Stack sections vertically */
-    align-items: center; /* Center horizontally */
+    flex-direction: column; 
+    align-items: center; 
     padding: 1rem 1.5rem;
   }
   .nav-brand {
@@ -169,10 +169,10 @@
   .nav-main-links {
     flex-direction: column;
     width: 100%;
-    margin: 0; /* Reset margin auto */
+    margin: 0; 
     padding: 0;
     align-items: center;
-    order: 2; /* Put main links below brand and auth links if needed */
+    order: 2; 
   }
   .nav-main-links li {
     margin: 0.5rem 0;
@@ -188,12 +188,12 @@
   }
   .nav-auth-links {
     width: 100%;
-    justify-content: center; /* Center auth links too */
+    justify-content: center; 
     margin-top: 0.5rem;
-    order: 3; /* Put auth links at the very bottom */
+    order: 3; 
   }
   .nav-auth-links li {
-    margin: 0 0.5rem; /* Small horizontal margin */
+    margin: 0 0.5rem; 
   }
   .navbar-logout-button {
     padding: 0.5rem 0;
