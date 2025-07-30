@@ -1,75 +1,84 @@
+/* Styles for the main container of the booking management page */
 .booking-management-container {
-  max-width: 1000px;
+  max-width: 1000px; /* Limits how wide the content area can get */
 }
 
+/* Message shown when there are no bookings */
 .no-bookings-message {
   text-align: center;
   font-size: 1.15rem;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Lighter text color */
   padding: 4rem;
-  border: 2px dashed var(--border-light);
+  border: 2px dashed var(--border-light); /* Dashed border to highlight it */
   border-radius: var(--border-radius-md);
   margin-top: 2.5rem;
-  background-color: var(--light-bg-offwhite);
+  background-color: var(--light-bg-offwhite); /* Light background for the message box */
 }
 
+/* Styles for the main bookings table */
 .bookings-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin-top: 2.5rem;
-  box-shadow: 0 6px 20px var(--shadow-sm);
-  border-radius: var(--border-radius-md);
-  overflow: hidden;
+  width: 100%; /* Table fills its container */
+  border-collapse: separate; /* Allows border-radius on the table */
+  border-spacing: 0; /* No space between table cells */
+  margin-top: 2.5rem; /* Space above the table */
+  box-shadow: 0 6px 20px var(--shadow-sm); /* Subtle shadow for the table */
+  border-radius: var(--border-radius-md); /* Rounded corners for the table */
+  overflow: hidden; /* Hides content that might go outside rounded corners */
 }
 
+/* Styles for both table headers (th) and table data cells (td) */
 .bookings-table th,
 .bookings-table td {
-  padding: 1.4rem 1.2rem;
-  text-align: left;
-  border-bottom: 1px solid var(--border-light);
+  padding: 1.4rem 1.2rem; /* Inner spacing for cells */
+  text-align: left; /* Aligns text to the left */
+  border-bottom: 1px solid var(--border-light); /* Line below each row */
 }
 
+/* Specific styles for table headers */
 .bookings-table th {
-  background-color: var(--primary-dark-blue);
-  color: var(--white);
-  font-weight: 600;
+  background-color: var(--primary-dark-blue); /* Dark blue background for headers */
+  color: var(--white); /* White text */
+  font-weight: 600; /* Bold text */
   font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  text-transform: uppercase; /* All caps text */
+  letter-spacing: 0.05em; /* Spaced out letters */
 }
 
+/* Ensures the last row doesn't have a bottom border */
 .bookings-table tbody tr:last-child td {
   border-bottom: none;
 }
 
+/* What happens when you hover over a table row */
 .bookings-table tbody tr:hover {
-  background-color: var(--light-bg-offwhite);
+  background-color: var(--light-bg-offwhite); /* Changes background on hover */
 }
 
+/* General style for booking status badges */
 .booking-status {
   font-size: 0.9rem;
   padding: 0.5rem 1rem;
-  border-radius: 50px;
+  border-radius: 50px; /* Pill shape */
   font-weight: 600;
-  color: var(--white);
+  color: var(--white); /* White text */
   display: inline-block;
 }
 
+/* Specific colors for different booking statuses */
 .booking-status.pending {
-  background-color: var(--accent-orange);
+  background-color: var(--accent-orange); /* Orange for pending */
 }
 .booking-status.confirmed {
-  background-color: var(--primary-dark-blue);
+  background-color: var(--primary-dark-blue); /* Dark blue for confirmed */
 }
 .booking-status.completed {
-  background-color: var(--text-light);
+  background-color: var(--text-light); /* Lighter gray for completed */
 }
 .booking-status.cancelled {
-  background-color: #DC3545;
+  background-color: #DC3545; /* Red for cancelled */
 }
 
-
+/* General styles for action buttons (Confirm, Mark Complete, Cancel) */
 .action-button {
   padding: 0.7rem 1.2rem;
   border: none;
@@ -78,48 +87,37 @@
   font-weight: 600;
   cursor: pointer;
   color: var(--white);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-right: 0.8rem;
-  margin-bottom: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+  margin-right: 0.8rem; /* Space between buttons */
+  margin-bottom: 0.5rem; /* Small space for mobile stacking */
 }
 
+/* Specific colors for action buttons */
 .confirm-button {
-  background-color: var(--accent-teal);
+  background-color: var(--accent-teal); /* Teal for confirm */
 }
 .confirm-button:hover {
-  background-color: #006666;
+  background-color: #006666; /* Darker teal on hover */
   transform: translateY(-2px);
 }
 
 .complete-button {
-  background-color: var(--primary-dark-blue);
+  background-color: var(--primary-dark-blue); /* Dark blue for complete */
 }
 .complete-button:hover {
-  background-color: #11115e;
+  background-color: #11115e; /* Darker blue on hover */
   transform: translateY(-2px);
 }
 
 .cancel-button {
-  background-color: #DC3545;
+  background-color: #DC3545; /* Red for cancel */
 }
 .cancel-button:hover {
-  background-color: #C82333;
+  background-color: #C82333; /* Darker red on hover */
   transform: translateY(-2px);
 }
 
-
-.success-message {
-  color: #28A745;
-  background-color: #D4EDDA;
-  border: 1px solid #C3E6CB;
-  padding: 0.8rem 1.2rem;
-  border-radius: var(--border-radius-sm);
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
+/* Style for the "Back" button */
 .back-button {
   background: none;
   border: none;
@@ -127,16 +125,19 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  align-self: flex-start;
+  align-self: flex-start; /* Aligns to the top-left */
   margin-bottom: 2rem;
   transition: color 0.3s ease;
 }
 
 .back-button:hover {
-  color: var(--accent-teal);
+  color: var(--accent-teal); /* Teal color on hover */
 }
 
+/* Media queries for responsiveness: Adjusts styles for different screen sizes. */
+
 @media (max-width: 1024px) {
+  /* Adjustments for medium screens (tablets) */
   .bookings-table th,
   .bookings-table td {
     padding: 1.2rem 1rem;
@@ -153,12 +154,14 @@
 }
 
 @media (max-width: 768px) {
+  /* Adjustments for smaller tablets and larger phones: makes table stack vertically */
   .bookings-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+    display: block; /* Changes table behavior */
+    overflow-x: auto; /* Allows horizontal scrolling if content is too wide */
+    white-space: nowrap; /* Prevents text wrapping in cells */
     border-radius: var(--border-radius-md);
   }
+  /* Makes table header, body, rows, and cells behave as blocks */
   .bookings-table thead, .bookings-table tbody, .bookings-table th, .bookings-table td, .bookings-table tr {
     display: block;
   }
@@ -169,21 +172,23 @@
   .bookings-table td {
     border-bottom: 1px solid var(--border-light);
     position: relative;
-    padding-left: 50%;
+    padding-left: 50%; /* Makes space for pseudo-element labels */
     text-align: right;
     padding: 1rem;
   }
+  /* Adds labels before data cells for mobile view, making table readable */
   .bookings-table td:before {
     position: absolute;
     left: 10px;
     width: 45%;
     padding-right: 10px;
     white-space: nowrap;
-    content: attr(data-label);
+    content: attr(data-label); /* Uses data-label attribute from HTML */
     font-weight: 600;
     text-align: left;
     color: var(--text-dark);
   }
+  /* Specific labels for each column in mobile view */
   .bookings-table td:nth-of-type(1):before { content: "Room Name"; }
   .bookings-table td:nth-of-type(2):before { content: "Customer Email"; }
   .bookings-table td:nth-of-type(3):before { content: "Check-in"; }
@@ -193,7 +198,7 @@
 
   .action-button {
     margin-bottom: 0.5rem;
-    width: 100%;
+    width: 100%; /* Buttons take full width */
     margin-right: 0;
   }
 }

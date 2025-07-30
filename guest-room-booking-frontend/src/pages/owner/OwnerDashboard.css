@@ -1,127 +1,146 @@
+/* Styles for the main container of the owner dashboard page */
 .owner-dashboard-container {
-  display: flex;
+  display: flex; /* Makes elements inside stack vertically by default */
   flex-direction: column;
 }
 
+/* This sets up the grid for our summary cards (Total Rooms, Bookings, Add Room) */
 .dashboard-summary-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  margin-bottom: 3.5rem;
-  justify-content: center;
+  display: grid; /* Uses CSS Grid for a flexible layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Creates responsive columns for cards */
+  gap: 2.5rem; /* Space between the cards */
+  margin-bottom: 3.5rem; /* Space below the grid */
+  justify-content: center; /* Centers the grid horizontally */
 }
 
+/* Styles for each individual summary card (like "Total Rooms Listed") */
 .summary-card {
-  background-color: var(--light-bg-offwhite);
-  padding: 2.5rem;
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 6px 20px var(--shadow-sm);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
+  background-color: var(--light-bg-offwhite); /* Soft off-white background */
+  padding: 2.5rem; /* Spacing inside the card */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  box-shadow: 0 6px 20px var(--shadow-sm); /* Subtle shadow */
+  text-align: center; /* Centers text inside */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  display: flex; /* Arranges card content vertically */
   flex-direction: column;
-  align-items: center;
-  border: 1px solid var(--border-light);
+  align-items: center; /* Centers content horizontally */
+  border: 1px solid var(--border-light); /* Light border */
 }
 
+/* What happens when you hover over a summary card */
 .summary-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px var(--shadow-md);
+  transform: translateY(-8px); /* Lifts the card slightly */
+  box-shadow: 0 12px 30px var(--shadow-md); /* Stronger shadow on hover */
 }
 
+/* Style for the title of each summary card (e.g., "Total Rooms Listed") */
 .summary-card h3 {
   font-size: 1.6rem;
-  color: var(--primary-dark-blue);
+  color: var(--primary-dark-blue); /* Main dark blue color */
   margin-bottom: 1.2rem;
-  font-weight: 700;
+  font-weight: 700; /* Bold text */
 }
 
+/* Style for the big number value in each summary card (e.g., "5" for roomsCount) */
 .summary-value {
-  font-size: 4rem;
-  font-weight: 800;
-  color: var(--accent-teal);
+  font-size: 4rem; /* Huge font size for the number */
+  font-weight: 800; /* Extra bold */
+  color: var(--accent-teal); /* Our accent teal color */
   margin-bottom: 1.8rem;
-  line-height: 1;
+  line-height: 1; /* Tight line spacing */
 }
 
+/* Style for the '+' icon in the "Add New Room" card */
 .add-room-icon {
-  font-size: 4.5rem;
+  font-size: 4.5rem; /* Even bigger font size for the icon */
   line-height: 1;
-  margin-top: -2rem;
+  margin-top: -2rem; /* Pulls it up slightly */
   margin-bottom: 0.8rem;
-  color: var(--primary-dark-blue);
+  color: var(--primary-dark-blue); /* Dark blue color */
 }
 
+/* Style for the links at the bottom of each summary card (e.g., "Manage Rooms") */
 .summary-link {
-  color: var(--primary-dark-blue);
-  text-decoration: none;
-  font-weight: 600;
+  color: var(--primary-dark-blue); /* Dark blue link color */
+  text-decoration: none; /* No underline by default */
+  font-weight: 600; /* Bold text */
   font-size: 1.05rem;
-  margin-top: auto;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
+  margin-top: auto; /* Pushes the link to the bottom of the card */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth hover effects */
 }
 
+/* What happens when you hover over a summary link */
 .summary-link:hover {
-  color: var(--accent-teal);
-  text-decoration: underline;
+  color: var(--accent-teal); /* Teal color on hover */
+  text-decoration: underline; /* Adds an underline on hover */
 }
 
+/* Section for displaying recent activities/bookings */
 .recent-activity-section {
-  background-color: var(--light-bg-offwhite);
-  padding: 3rem;
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 6px 20px var(--shadow-sm);
-  border: 1px solid var(--border-light);
+  background-color: var(--light-bg-offwhite); /* Light off-white background */
+  padding: 3rem; /* Spacing inside */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  box-shadow: 0 6px 20px var(--shadow-sm); /* Subtle shadow */
+  border: 1px solid var(--border-light); /* Light border */
 }
 
+/* Style for the "Recent Activity" heading */
 .recent-activity-section h3 {
   font-size: 2rem;
   color: var(--primary-dark-blue);
   margin-bottom: 2rem;
-  border-bottom: 2px solid var(--border-light);
+  border-bottom: 2px solid var(--border-light); /* A line below the heading */
   padding-bottom: 1rem;
   font-weight: 700;
 }
 
+/* Basic styling for the list of activities */
 .activity-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none; /* Removes bullet points */
+  padding: 0; /* No default padding */
+  margin: 0; /* No default margin */
 }
 
+/* Styling for each item in the activity list */
 .activity-list li {
-  background-color: var(--white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--border-radius-sm);
-  padding: 1.2rem 1.8rem;
-  margin-bottom: 1rem;
+  background-color: var(--white); /* White background for each activity item */
+  border: 1px solid var(--border-light); /* Light border */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+  padding: 1.2rem 1.8rem; /* Spacing inside the item */
+  margin-bottom: 1rem; /* Space between items */
   font-size: 1rem;
-  color: var(--text-primary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  transition: transform 0.2s ease;
+  color: var(--text-primary); /* Darker text color */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Very subtle shadow */
+  transition: transform 0.2s ease; /* Smooth hover effect */
 }
 
+/* What happens when you hover over an activity list item */
 .activity-list li:hover {
-  transform: translateX(5px);
+  transform: translateX(5px); /* Slides the item slightly to the right */
 }
 
+/* Style for the "Back" button at the top of the page */
 .back-button {
-  background: none;
-  border: none;
-  color: var(--primary-dark-blue);
+  background: none; /* No background */
+  border: none; /* No border */
+  color: var(--primary-dark-blue); /* Main dark blue color */
   font-size: 1rem;
   font-weight: 600;
-  cursor: pointer;
-  align-self: flex-start;
-  margin-bottom: 2rem;
-  transition: color 0.3s ease;
+  cursor: pointer; /* Shows it's clickable */
+  align-self: flex-start; /* Pushes the button to the top-left */
+  margin-bottom: 2rem; /* Space below the button */
+  transition: color 0.3s ease; /* Smooth color change on hover */
 }
 
+/* What happens when you hover over the "Back" button */
 .back-button:hover {
-  color: var(--accent-teal);
+  color: var(--accent-teal); /* Teal color on hover */
 }
+
+/* Media queries for responsiveness: These blocks adjust styles for different screen sizes. */
 
 @media (max-width: 1024px) {
+  /* Adjustments for medium screens (like tablets in landscape mode) */
   .dashboard-summary-grid {
     gap: 2rem;
   }
@@ -143,14 +162,15 @@
 }
 
 @media (max-width: 768px) {
+  /* Adjustments for smaller tablets and larger phones */
   .dashboard-summary-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Cards stack vertically on smaller screens */
     gap: 2rem;
   }
   .summary-card {
     padding: 1.8rem;
-    max-width: 450px;
-    margin: 0 auto;
+    max-width: 450px; /* Limits width when stacked */
+    margin: 0 auto; /* Centers the card */
   }
   .summary-value {
     font-size: 3rem;
@@ -170,6 +190,7 @@
 }
 
 @media (max-width: 480px) {
+  /* Adjustments for typical mobile phone screens */
   .summary-card {
     padding: 1.5rem;
     border-radius: var(--border-radius-sm);

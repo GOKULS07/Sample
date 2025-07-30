@@ -1,106 +1,116 @@
+/* Styles for the main container of the booking history page */
 .booking-history-container {
-  max-width: 900px;
-  display: flex;
+  max-width: 900px; /* Limits how wide the content area can get */
+  display: flex; /* Arranges content in a column */
   flex-direction: column;
 }
 
+/* Message shown when the user has no bookings */
 .no-bookings-message {
   text-align: center;
   font-size: 1.15rem;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Lighter text color */
   padding: 4rem;
-  border: 2px dashed var(--border-light);
+  border: 2px dashed var(--border-light); /* Dashed border to highlight it */
   border-radius: var(--border-radius-md);
   margin-top: 2.5rem;
-  background-color: var(--light-bg-offwhite);
+  background-color: var(--light-bg-offwhite); /* Light background for the message box */
 }
 
+/* Container for the list of booking cards */
 .booking-list {
-  display: flex;
+  display: flex; /* Stacks the booking cards vertically */
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.5rem; /* Space between each booking card */
   margin-top: 2.5rem;
 }
 
+/* Styles for each individual booking item card */
 .booking-item-card {
-  background-color: var(--white);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
+  background-color: var(--white); /* White background for the card */
+  display: flex; /* Arranges info and status/actions side-by-side */
+  justify-content: space-between; /* Pushes info left, actions right */
+  align-items: center; /* Vertically aligns items in the center */
+  padding: 1.5rem; /* Spacing inside the card */
   border-radius: var(--border-radius-md);
-  box-shadow: 0 4px 15px var(--shadow-sm);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 15px var(--shadow-sm); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  border: 1px solid var(--border-light); /* Light border */
 }
 
+/* What happens when you hover over a booking item card */
 .booking-item-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px var(--shadow-md);
+  transform: translateY(-5px); /* Lifts the card slightly */
+  box-shadow: 0 8px 25px var(--shadow-md); /* Stronger shadow on hover */
 }
 
+/* Section for booking details (room name, dates, price) */
 .booking-info h3 {
   font-size: 1.5rem;
-  color: var(--primary-dark-blue);
+  color: var(--primary-dark-blue); /* Main dark blue color for heading */
   margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-weight: 700; /* Bold text */
 }
 
 .booking-info p {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Lighter grey text */
   margin-bottom: 0.4rem;
 }
 
+/* Container for booking status badge and action buttons */
 .booking-status-actions {
-  display: flex;
+  display: flex; /* Arranges status and buttons vertically by default */
   flex-direction: column;
-  align-items: flex-end;
-  gap: 0.8rem;
+  align-items: flex-end; /* Aligns items to the right */
+  gap: 0.8rem; /* Space between status and button */
 }
 
+/* General style for booking status badges */
 .booking-status {
   font-size: 0.9rem;
   padding: 0.5rem 1rem;
-  border-radius: 50px;
+  border-radius: 50px; /* Pill shape */
   font-weight: 600;
-  color: var(--white);
+  color: var(--white); /* White text */
   display: inline-block;
 }
 
+/* Specific colors for different booking statuses */
 .booking-status.upcoming {
-  background-color: var(--primary-dark-blue);
+  background-color: var(--primary-dark-blue); /* Dark blue for upcoming */
 }
 
 .booking-status.completed {
-  background-color: var(--text-light);
+  background-color: var(--text-light); /* Light grey for completed */
 }
 .booking-status.cancelled {
-  background-color: #DC3545;
+  background-color: #DC3545; /* Red for cancelled */
 }
 
-
+/* Styles for the "Cancel" button */
 .cancel-button {
-  background-color: #DC3545;
-  color: var(--white);
+  background-color: #DC3545; /* Red background */
+  color: var(--white); /* White text */
   border: none;
   padding: 0.7rem 1.2rem;
   border-radius: var(--border-radius-sm);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
 }
 
 .cancel-button:hover {
-  background-color: #C82333;
+  background-color: #C82333; /* Darker red on hover */
   transform: translateY(-2px);
 }
 
+/* Styles for success messages shown on the page */
 .success-message {
-  color: #28A745;
-  background-color: #D4EDDA;
-  border: 1px solid #C3E6CB;
+  color: #28A745; /* Green text */
+  background-color: #D4EDDA; /* Light green background */
+  border: 1px solid #C3E6CB; /* Green border */
   padding: 0.8rem 1.2rem;
   border-radius: var(--border-radius-sm);
   margin-bottom: 1.5rem;
@@ -109,6 +119,7 @@
   font-weight: 500;
 }
 
+/* Style for the "Back" button at the top of the page */
 .back-button {
   background: none;
   border: none;
@@ -116,38 +127,42 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  align-self: flex-start;
+  align-self: flex-start; /* Aligns to the top-left */
   margin-bottom: 2rem;
   transition: color 0.3s ease;
 }
 
 .back-button:hover {
-  color: var(--accent-teal);
+  color: var(--accent-teal); /* Teal color on hover */
 }
 
+/* Media queries for responsiveness: Adjusts layout/sizes for different screen widths. */
+
 @media (max-width: 768px) {
+  /* Adjustments for smaller tablets and larger phones */
   .booking-item-card {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Stacks info and actions vertically */
+    align-items: flex-start; /* Aligns content to the left */
     padding: 1.2rem;
   }
   .booking-info {
-    width: 100%;
-    margin-bottom: 1rem;
+    width: 100%; /* Info takes full width */
+    margin-bottom: 1rem; /* Space below info */
   }
   .booking-status-actions {
-    width: 100%;
-    align-items: center;
+    width: 100%; /* Actions take full width */
+    align-items: center; /* Centers status and button */
   }
   .booking-status {
     margin-bottom: 0.8rem;
   }
   .cancel-button {
-    width: 100%;
+    width: 100%; /* Cancel button takes full width */
   }
 }
 
 @media (max-width: 480px) {
+  /* Adjustments for very small mobile phones */
   .booking-item-card {
     padding: 1rem;
     border-radius: var(--border-radius-sm);

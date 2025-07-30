@@ -1,72 +1,81 @@
+/* This styles the main container for the profile page */
 .profile-page-container {
-  max-width: 650px;
+  max-width: 650px; /* Limits how wide the profile content can get */
 }
 
+/* Styles for the profile update form itself */
 .profile-form {
-  display: flex;
+  display: flex; /* Arranges form elements in a column */
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.8rem; /* Space between form groups */
 }
 
+/* Ensures each form group starts without extra top margin */
 .profile-form .form-group {
   margin-bottom: 0;
 }
 
+/* Styles for labels of form inputs */
 .profile-form label {
-  display: block;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
-  color: var(--text-primary);
+  display: block; /* Puts label on its own line above the input */
+  margin-bottom: 0.8rem; /* Space between label and input */
+  font-weight: 600; /* Makes label text bold */
+  color: var(--text-primary); /* Darker text color */
   font-size: 1.05rem;
 }
 
+/* Styling for various input types (text, email, password, tel) */
 .profile-form input[type="text"],
 .profile-form input[type="email"],
 .profile-form input[type="tel"],
 .profile-form input[type="password"] {
-  width: 100%;
-  padding: 1rem 15px;
-  border: 1px solid var(--border-light);
-  border-radius: var(--border-radius-sm);
+  width: 100%; /* Inputs fill their available width */
+  padding: 1rem 15px; /* Inner spacing */
+  border: 1px solid var(--border-light); /* Light border */
+  border-radius: var(--border-radius-sm); /* Slightly rounded corners */
   font-size: 1.05rem;
   color: var(--text-primary);
-  background-color: var(--light-bg-offwhite);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--light-bg-offwhite); /* Soft off-white background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus effects */
 }
 
+/* What happens when an input field is active or clicked */
 .profile-form input:focus {
-  outline: none;
-  border-color: var(--primary-dark-blue);
-  box-shadow: 0 0 0 4px rgba(25, 25, 112, 0.1);
+  outline: none; /* Removes default outline */
+  border-color: var(--primary-dark-blue); /* Changes border to our primary dark blue */
+  box-shadow: 0 0 0 4px rgba(25, 25, 112, 0.1); /* Adds a subtle glow */
 }
 
+/* Styling for the main submit button on the profile form */
 .profile-form .primary-button {
-  align-self: flex-end;
-  width: auto;
-  min-width: 180px;
-  margin-top: 1.5rem;
+  align-self: flex-end; /* Pushes the button to the bottom right */
+  width: auto; /* Button width fits its content */
+  min-width: 180px; /* Ensures a minimum width */
+  margin-top: 1.5rem; /* Space above the button */
 }
 
+/* Styles for the "Back" button */
 .back-button {
-  background: none;
-  border: none;
-  color: var(--primary-dark-blue);
+  background: none; /* No background */
+  border: none; /* No border */
+  color: var(--primary-dark-blue); /* Main dark blue color */
   font-size: 1rem;
   font-weight: 600;
-  cursor: pointer;
-  align-self: flex-start;
-  margin-bottom: 2rem;
-  transition: color 0.3s ease;
+  cursor: pointer; /* Shows it's clickable */
+  align-self: flex-start; /* Pushes the button to the top left */
+  margin-bottom: 2rem; /* Space below the button */
+  transition: color 0.3s ease; /* Smooth color change on hover */
 }
 
 .back-button:hover {
-  color: var(--accent-teal);
+  color: var(--accent-teal); /* Teal color on hover */
 }
 
+/* Styling for success messages shown on the page */
 .success-message {
-  color: #28A745;
-  background-color: #D4EDDA;
-  border: 1px solid #C3E6CB;
+  color: #28A745; /* Green text */
+  background-color: #D4EDDA; /* Light green background */
+  border: 1px solid #C3E6CB; /* Green border */
   padding: 0.8rem 1.2rem;
   border-radius: var(--border-radius-sm);
   margin-bottom: 1.5rem;
@@ -75,12 +84,15 @@
   font-weight: 500;
 }
 
+/* Media queries for responsiveness: Adjusts styles for different screen sizes. */
+
 @media (max-width: 768px) {
+  /* Adjustments for medium screens (like tablets) */
   .profile-page-container {
-    padding: 2rem;
+    padding: 2rem; /* Reduced padding */
   }
   .profile-form {
-    gap: 1.5rem;
+    gap: 1.5rem; /* Reduced gap between form groups */
   }
   .profile-form label {
     font-size: 1rem;
@@ -90,15 +102,16 @@
     font-size: 1rem;
   }
   .profile-form .primary-button {
-    width: 100%;
-    align-self: center;
+    width: 100%; /* Button takes full width on smaller screens */
+    align-self: center; /* Centers the button */
   }
 }
 
 @media (max-width: 480px) {
+  /* Adjustments for small mobile screens */
   .profile-page-container {
     padding: 1.5rem;
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-md); /* Slightly less rounded corners */
   }
   .profile-form {
     gap: 1.2rem;

@@ -1,96 +1,109 @@
+/* Styles for the main container of the manage rooms page */
 .manage-rooms-container {
-  display: flex;
+  display: flex; /* Arranges content in a column */
   flex-direction: column;
 }
 
+/* Styles for the "Add New Room" button */
 .add-new-room-button {
-  align-self: flex-end;
-  margin-bottom: 2rem;
+  align-self: flex-end; /* Pushes the button to the right */
+  margin-bottom: 2rem; /* Space below the button */
 }
 
+/* Message shown when the owner has no rooms listed */
 .no-rooms-message {
   text-align: center;
   font-size: 1.15rem;
   color: var(--text-secondary);
   padding: 4rem;
-  border: 2px dashed var(--border-light);
+  border: 2px dashed var(--border-light); /* A dashed border */
   border-radius: var(--border-radius-md);
   margin-top: 2.5rem;
-  background-color: var(--light-bg-offwhite);
+  background-color: var(--light-bg-offwhite); /* Light background */
 }
 
+/* Container for the list of room management cards */
 .room-management-list {
-  display: flex;
+  display: flex; /* Stacks the room cards vertically */
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.5rem; /* Space between each room card */
   margin-top: 2rem;
 }
 
+/* Styles for each individual room management card */
 .manage-room-card {
-  background-color: var(--white);
-  display: flex;
-  align-items: center;
-  padding: 1.2rem;
+  background-color: var(--white); /* White background */
+  display: flex; /* Arranges image, info, and buttons in a row */
+  align-items: center; /* Vertically aligns items in the center */
+  padding: 1.2rem; /* Spacing inside the card */
   border-radius: var(--border-radius-md);
-  box-shadow: 0 2px 10px var(--shadow-sm);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px var(--shadow-sm); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
   border: 1px solid var(--border-light);
 }
 
+/* What happens when you hover over a room management card */
 .manage-room-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px var(--shadow-md);
+  transform: translateY(-3px); /* Lifts the card slightly */
+  box-shadow: 0 5px 15px var(--shadow-md); /* Stronger shadow on hover */
 }
 
+/* Style for the room image thumbnail */
 .manage-room-image {
   width: 100px;
   height: 80px;
-  object-fit: cover;
+  object-fit: cover; /* Ensures image covers the area */
   border-radius: var(--border-radius-sm);
-  margin-right: 1.5rem;
-  flex-shrink: 0;
+  margin-right: 1.5rem; /* Space to the right of the image */
+  flex-shrink: 0; /* Prevents image from shrinking */
 }
 
+/* Section for room name and basic info */
 .manage-room-info {
-  flex-grow: 1;
+  flex-grow: 1; /* Allows this section to take up available space */
 }
 
+/* Style for the room name heading */
 .manage-room-info h3 {
   font-size: 1.3rem;
   color: var(--primary-dark-blue);
-  margin-bottom: 0.4rem;
   font-weight: 700;
 }
 
+/* Style for room details paragraph (beds, price) */
 .manage-room-info p {
   font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-bottom: 0.6rem;
 }
 
+/* Styles for the room status (Active/Inactive) badge */
 .room-status {
   font-size: 0.85rem;
   padding: 0.3rem 0.8rem;
-  border-radius: 50px;
+  border-radius: 50px; /* Makes it pill-shaped */
   font-weight: 600;
   color: var(--white);
 }
 
+/* Specific color for 'Active' status */
 .room-status.active {
-  background-color: var(--accent-teal);
+  background-color: var(--accent-teal); /* Teal for active */
 }
 
+/* Specific color for 'Inactive' status */
 .room-status.inactive {
-  background-color: #DC3545;
+  background-color: #DC3545; /* Red for inactive */
 }
 
+/* Container for the action buttons (Edit, Delete) */
 .manage-room-actions {
-  display: flex;
-  gap: 0.8rem;
-  margin-left: 1.5rem;
-  flex-shrink: 0;
+  display: flex; /* Arranges buttons in a row */
+  gap: 0.8rem; /* Space between buttons */
+  margin-left: 1.5rem; /* Space to the left of the buttons */
+  flex-shrink: 0; /* Prevents buttons from shrinking */
 }
 
+/* General styles for action buttons */
 .action-button {
   padding: 0.6rem 1.2rem;
   border: none;
@@ -99,30 +112,35 @@
   font-weight: 600;
   cursor: pointer;
   color: var(--white);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+  text-decoration: none; /* No underline for links */
   display: inline-block;
   text-align: center;
 }
 
+/* Specific color for the "Edit" button */
 .edit-button {
-  background-color: var(--primary-dark-blue);
+  background-color: var(--primary-dark-blue); /* Dark blue background */
 }
 
+/* What happens when you hover over the "Edit" button */
 .edit-button:hover {
-  background-color: #11115e;
-  transform: translateY(-1px);
+  background-color: #11115e; /* Slightly darker blue */
+  transform: translateY(-1px); /* Slight lift */
 }
 
+/* Specific color for the "Delete" button */
 .delete-button {
-  background-color: #DC3545;
+  background-color: #DC3545; /* Red background */
 }
 
+/* What happens when you hover over the "Delete" button */
 .delete-button:hover {
-  background-color: #C82333;
+  background-color: #C82333; /* Darker red */
   transform: translateY(-1px);
 }
 
+/* Style for the "Back" button */
 .back-button {
   background: none;
   border: none;
@@ -130,42 +148,46 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  align-self: flex-start;
+  align-self: flex-start; /* Aligns to the top-left */
   margin-bottom: 2rem;
   transition: color 0.3s ease;
 }
 
+/* What happens when you hover over the "Back" button */
 .back-button:hover {
-  color: var(--accent-teal);
+  color: var(--accent-teal); /* Teal color on hover */
 }
 
+/* Media queries for responsiveness: Adjusts styles for different screen sizes. */
+
 @media (max-width: 768px) {
+  /* Adjustments for smaller tablets and large phones */
   .manage-room-card {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: flex-start; /* Aligns items to the left */
   }
   .manage-room-image {
-    width: 100%;
+    width: 100%; /* Image takes full width */
     height: 180px;
-    margin-right: 0;
-    margin-bottom: 1rem;
+    margin-right: 0; /* Removes horizontal margin */
+    margin-bottom: 1rem; /* Adds vertical space below image */
   }
   .manage-room-info {
-    width: 100%;
+    width: 100%; /* Info section takes full width */
   }
   .manage-room-actions {
-    width: 100%;
-    justify-content: space-around;
+    width: 100%; /* Buttons take full width */
+    justify-content: space-around; /* Spreads buttons out */
     margin-left: 0;
     margin-top: 1rem;
   }
   .action-button {
-    flex: 1;
+    flex: 1; /* Makes buttons grow equally */
     padding: 0.8rem;
     font-size: 1rem;
   }
   .add-new-room-button {
-    width: 100%;
-    align-self: center;
+    width: 100%; /* "Add New Room" button also takes full width */
+    align-self: center; /* Centers it */
   }
 }

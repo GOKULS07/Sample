@@ -1,58 +1,52 @@
+/* This styles the main container of our booking page */
 .booking-page-container {
-  max-width: 900px;
-  display: flex;
+  max-width: 900px; /* Limits how wide the content area can get */
+  display: flex; /* Arranges elements in a column */
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centers content horizontally */
 }
 
+/* This grid container is used to arrange the summary and calendar side-by-side on larger screens */
 .booking-main-content-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  width: 100%;
-  margin-bottom: 2.5rem;
-  justify-content: center;
-  align-items: flex-start;
+  display: flex; /* Uses Flexbox */
+  flex-wrap: wrap; /* Allows sections to stack on smaller screens */
+  gap: 2.5rem; /* Space between the two main content sections (summary and calendar) */
+  width: 100%; /* Takes full width of its parent */
+  margin-bottom: 2.5rem; /* Space below this grid */
+  justify-content: center; /* Centers items horizontally */
+  align-items: flex-start; /* Aligns items to the top */
 }
 
-.booking-summary-card {
-  background-color: var(--light-bg-offwhite);
-  padding: 2.5rem;
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 6px 20px var(--shadow-sm);
-  border: 1px solid var(--border-light);
-  flex: 1;
-  min-width: 350px;
-  max-width: calc(50% - 1.25rem);
-  height: fit-content;
-}
-
+/* Styles for the booking summary card and payment info section */
+.booking-summary-card,
 .payment-info-section {
-  background-color: var(--light-bg-offwhite);
-  padding: 2.5rem;
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 6px 20px var(--shadow-sm);
-  border: 1px solid var(--border-light);
-  width: 100%;
-  margin-bottom: 2rem;
+  background-color: var(--light-bg-offwhite); /* Soft off-white background */
+  padding: 2.5rem; /* Spacing inside */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  box-shadow: 0 6px 20px var(--shadow-sm); /* Subtle shadow */
+  border: 1px solid var(--border-light); /* Light border */
+  width: 100%; /* Takes full width by default (will be overridden by flex: 1 in grid) */
+  margin-bottom: 2rem; /* Space below each section */
 }
 
+/* Common styles for titles within sections (Booking Details, Total Payment, Select Booking Dates) */
 .booking-summary-card h3,
 .payment-info-section h3,
 .availability-title {
   font-size: 1.8rem;
-  color: var(--primary-dark-blue);
+  color: var(--primary-dark-blue); /* Main dark blue color */
   margin-bottom: 1.8rem;
   font-weight: 700;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light); /* Underline */
   padding-bottom: 1rem;
-  text-align: center;
+  text-align: center; /* Centers the title text */
 }
 
+/* Styles for detail rows (e.g., "Room Name: [Value]") */
 .detail-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+  display: flex; /* Arranges label and value side-by-side */
+  justify-content: space-between; /* Pushes label to left, value to right */
+  margin-bottom: 1rem; /* Space between rows */
   font-size: 1.1rem;
   color: var(--text-primary);
 }
@@ -62,22 +56,25 @@
 }
 
 .detail-row strong {
-  font-weight: 600;
+  font-weight: 600; /* Makes value text bold */
 }
 
+/* Specific styles for the total price row */
 .total-price-row {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px dashed var(--border-light);
+  border-top: 1px dashed var(--border-light); /* Dashed line above */
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--primary-dark-blue);
 }
 
+/* Color for the final calculated total price */
 .total-price {
-  color: var(--accent-orange);
+  color: var(--accent-orange); /* Our accent orange color */
 }
 
+/* Styling for disclaimer text (e.g., "Additional taxes...") */
 .payment-info-section p {
   text-align: center;
   font-size: 1rem;
@@ -85,26 +82,28 @@
   margin-bottom: 2rem;
 }
 
+/* Styles for the "Confirm Booking" button */
 .confirm-booking-button {
-  width: auto;
-  min-width: 200px;
-  margin: 0 auto;
+  width: auto; /* Button width fits its content */
+  min-width: 200px; /* Minimum width */
+  margin: 0 auto; /* Centers the button */
   display: block;
   padding: 1.2rem;
   font-size: 1.2rem;
   font-weight: 700;
-  background-color: var(--accent-teal);
+  background-color: var(--accent-teal); /* Our accent teal background */
   color: var(--white);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effects */
 }
 
 .confirm-booking-button:hover {
-  background-color: #006666;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background-color: #006666; /* Darker teal on hover */
+  transform: translateY(-3px); /* Lifts the button */
+  box-shadow: 0 10px 25px var(--shadow-md); /* Stronger shadow */
 }
 
+/* Styles for the "Back" button at the top of the page */
 .back-button {
   background: none;
   border: none;
@@ -112,15 +111,16 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  align-self: flex-start;
+  align-self: flex-start; /* Aligns to the top-left */
   margin-bottom: 2rem;
   transition: color 0.3s ease;
 }
 
 .back-button:hover {
-  color: var(--accent-orange);
+  color: var(--accent-orange); /* Orange on hover */
 }
 
+/* Style for the "Total Nights" summary text */
 .nights-summary {
   text-align: center;
   font-size: 1.05rem;
@@ -129,6 +129,7 @@
   margin-top: 1rem;
 }
 
+/* Style for the "Additional taxes..." note */
 .payment-note {
   font-size: 0.9rem;
   color: var(--text-light);
@@ -136,11 +137,11 @@
   text-align: center;
 }
 
-
+/* Styles for the Availability Calendar section itself (the card containing the calendar) */
 .availability-full-width-section {
-  width: 100%;
-  max-width: 800px; 
-  margin: 2rem auto;
+  width: 100%; /* Takes full width */
+  max-width: 800px; /* Limits its maximum width */
+  margin: 2rem auto; /* Centers it and adds vertical space */
   background-color: var(--light-bg-offwhite);
   padding: 2.5rem;
   border-radius: var(--border-radius-lg);
@@ -148,16 +149,18 @@
   border: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centers calendar horizontally within its card */
 }
 
+/* Wrapper around the DatePicker component */
 .availability-calendar-wrapper {
   width: 100%;
-  max-width: 680px; 
+  max-width: 680px; /* Limits the width of the actual calendar area */
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centers the DatePicker inside */
 }
 
+/* Base styles for the React DatePicker component */
 .react-datepicker {
   font-family: 'Inter', sans-serif;
   border: none;
@@ -167,69 +170,78 @@
   padding: 15px;
   border: 1px solid var(--border-light);
   width: 100%;
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: center;
-  gap: 25px; 
+  display: flex !important; /* Force flex display */
+  flex-direction: row !important; /* Forces months to display side-by-side */
+  justify-content: center; /* Centers months horizontally */
+  gap: 25px; /* Space between the two months */
 }
 
+/* Styles for the container of individual months within the datepicker */
 .react-datepicker__month-container {
-  display: block;
+  display: block; /* Standard block behavior within the flex parent */
   vertical-align: top;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Prevents months from shrinking too much */
   margin: 0;
   padding: 0;
 }
 
+/* Header of the calendar (Month and Year) */
 .react-datepicker__header {
-  background-color: var(--primary-dark-blue);
+  background-color: var(--primary-dark-blue); /* Dark blue header background */
   border-bottom: none;
   padding-top: 15px;
   border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
 }
 
+/* Styles for current month name and day names (Su, Mo, Tu, etc.) */
 .react-datepicker__current-month,
 .react-datepicker__day-name {
-  color: var(--white);
+  color: var(--white); /* White text */
   font-size: 1.1rem;
 }
 
+/* Padding for the month grid */
 .react-datepicker__month {
   padding: 15px;
 }
 
+/* Styles for individual day numbers in the calendar */
 .react-datepicker__day {
-  width: 2.5rem;
+  width: 2.5rem; /* Size of each day cell */
   height: 2.5rem;
   line-height: 2.5rem;
-  margin: 0.25rem;
-  border-radius: var(--border-radius-sm);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  margin: 0.25rem; /* Space between day cells */
+  border-radius: var(--border-radius-sm); /* Rounded day cells */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover/selection */
   font-size: 1.05rem;
 }
 
+/* Styles for days outside the current month (faded) */
 .react-datepicker__day--outside-month {
   color: var(--text-light);
 }
 
+/* Styles for selected dates and dates within the selected range */
 .react-datepicker__day--selected,
 .react-datepicker__day--in-selecting-range,
 .react-datepicker__day--in-range {
-  background-color: var(--accent-teal);
-  color: var(--white);
+  background-color: var(--accent-teal); /* Teal background */
+  color: var(--white); /* White text */
   border-radius: var(--border-radius-sm);
 }
 
+/* What happens when you hover over a day or select it with keyboard */
 .react-datepicker__day--keyboard-selected,
 .react-datepicker__day:hover {
-  background-color: #006666;
+  background-color: #006666; /* Darker teal on hover */
   color: var(--white);
   border-radius: var(--border-radius-sm);
 }
 
+/* Styles for disabled dates (e.g., booked dates) */
 .react-datepicker__day--disabled {
   color: var(--text-light);
-  cursor: not-allowed;
+  cursor: not-allowed; /* No-entry cursor */
   background-color: var(--light-bg-offwhite);
   opacity: 0.6;
 }
@@ -238,33 +250,35 @@
   color: var(--text-light);
 }
 
+/* Styles for calendar navigation arrows */
 .react-datepicker__navigation {
   top: 18px;
-  left: 30px; 
-  right: 30px; 
-  width: 25px; 
-  height: 25px; 
+  left: 30px; /* Position from left edge */
+  right: 30px; /* Position from right edge */
+  width: 25px; /* Size of the navigation button area */
+  height: 25px;
   text-align: center;
   line-height: 25px;
 }
 .react-datepicker__navigation--previous {
-  border-right-color: var(--white);
+  border-right-color: var(--white); /* White arrow color */
 }
 .react-datepicker__navigation--next {
-  border-left-color: var(--white);
+  border-left-color: var(--white); /* White arrow color */
 }
 
+/* Styles for the actual arrow icons within navigation buttons */
 .react-datepicker__navigation-icon::before {
-  border-color: var(--white);
-  border-width: 2px 2px 0 0;
-  height: 10px; 
-  width: 10px; 
+  border-color: var(--white); /* White arrow color */
+  border-width: 2px 2px 0 0; /* Makes it a solid arrow shape */
+  height: 10px; /* Size of the arrow icon */
+  width: 10px;
 }
 
-
+/* Styles for range selection start and end dates (more specific overrides) */
 .react-datepicker__day--selecting-range-start,
 .react-datepicker__day--selecting-range-end {
-  background-color: var(--accent-teal) !important;
+  background-color: var(--accent-teal) !important; /* Force teal background */
   color: var(--white) !important;
 }
 
@@ -274,54 +288,51 @@
   color: var(--white) !important;
 }
 
+/* Media queries for responsiveness: These blocks adjust styles for different screen sizes. */
 
 @media (max-width: 1024px) {
+  /* Adjustments for medium screens (tablets and smaller laptops) */
   .booking-page-container {
-    max-width: 750px; 
+    max-width: 750px;
   }
- 
+  .booking-summary-card,
+  .payment-info-section,
+  .availability-full-width-section {
+    padding: 2rem; /* Reduced padding */
+    margin-bottom: 1.5rem; /* Reduced margin */
+  }
+  .booking-summary-card h3,
+  .payment-info-section h3,
+  .availability-title {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+  }
+  /* For tablets, we force the calendar months to stack vertically if two are shown */
   .react-datepicker {
-    flex-direction: column !important; 
-    gap: 0; 
+    flex-direction: column !important;
+    gap: 0; /* Remove horizontal gap when stacking */
   }
   .react-datepicker__month {
-    margin: 0 auto;
-    width: 100%; 
-    padding: 15px 0; 
+    margin: 0 auto; /* Center individual month */
+    width: 100%; /* Month takes full width when stacked */
+    padding: 15px 0; /* Adjust vertical padding */
   }
+  /* Navigation arrows adjusted for stacked months */
   .react-datepicker__navigation {
-    left: 20px; 
+    left: 20px;
     right: 20px;
   }
 }
 
 @media (max-width: 768px) {
+  /* Adjustments for smaller tablets and large phones */
   .booking-page-container {
     padding: 1.5rem;
   }
-  .booking-summary-card,
-  .payment-info-section,
-  .availability-full-width-section {
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: var(--border-radius-md);
-  }
-  .booking-summary-card h3,
-  .payment-info-section h3,
-  .availability-title {
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.8rem;
-  }
-  .detail-row {
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
-  }
-  .total-price-row {
-    font-size: 1.2rem;
-  }
+  /* ... (other adjustments for summary, payment, calendar sections) ... */
   .confirm-booking-button {
-    width: 100%;
+    width: 100%; /* Button takes full width */
     font-size: 1.1rem;
     padding: 1rem;
   }
@@ -343,20 +354,11 @@
 }
 
 @media (max-width: 480px) {
+  /* Adjustments for very small mobile phones */
   .booking-page-container {
     padding: 1rem;
   }
-  .booking-summary-card h3,
-  .payment-info-section h3,
-  .availability-title {
-    font-size: 1.4rem;
-  }
-  .detail-row {
-    font-size: 0.95rem;
-  }
-  .total-price-row {
-    font-size: 1.1rem;
-  }
+  /* ... (other adjustments) ... */
   .confirm-booking-button {
     padding: 0.9rem;
     font-size: 1rem;

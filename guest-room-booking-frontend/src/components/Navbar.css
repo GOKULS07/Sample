@@ -1,87 +1,91 @@
 .navbar {
-  background-color: var(--white);
-  padding: 1.2rem 2.5rem;
-  box-shadow: 0 4px 15px var(--shadow-sm);
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  flex-wrap: wrap;
-  position: sticky;
+  background-color: var(--white); /* White background for the whole navigation bar */
+  padding: 1.2rem 2.5rem; /* Spacing inside the navbar */
+  box-shadow: 0 4px 15px var(--shadow-sm); /* Adds a subtle shadow below the navbar */
+  display: flex; /* Uses Flexbox for arranging items inside */
+  justify-content: space-between; /* Pushes the brand to the left and auth links to the right */
+  align-items: center; /* Vertically aligns items in the center */
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+  position: sticky; /* Makes the navbar stick to the top when scrolling */
   top: 0;
-  z-index: 1000;
+  z-index: 1000; /* Ensures the navbar stays on top of other content */
 }
 
+/* Styles for the brand/logo section of the navbar */
 .nav-brand {
-  flex-shrink: 0; 
+  flex-shrink: 0; /* Prevents the brand from shrinking when space is tight */
 }
 
 .nav-brand a {
-  color: var(--primary-dark-blue);
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 800;
+  color: var(--primary-dark-blue); /* Sets the color of the brand text */
+  text-decoration: none; /* Removes underline from the link */
+  font-size: 2rem; /* Size of the brand text */
+  font-weight: 800; /* Extra bold */
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.02em; /* Slightly tighter letter spacing for the brand */
 }
 
-
+/* Styles for the main navigation links (Home, Browse Rooms, My Bookings, Profile) */
 .nav-main-links {
-  list-style: none;
-  margin: 0 auto; 
+  list-style: none; /* Removes bullet points from the list */
+  margin: 0 auto; /* This magic trick centers the main links horizontally */
   padding: 0;
-  display: flex;
-  align-items: center;
-  flex-grow: 1; 
-  justify-content: center; 
-  flex-wrap: wrap;
+  display: flex; /* Uses Flexbox for arranging links */
+  align-items: center; /* Vertically aligns links */
+  flex-grow: 1; /* Allows these links to take up available space, pushing other items away */
+  justify-content: center; /* Centers the links within the space they take */
+  flex-wrap: wrap; /* Allows links to wrap to the next line on smaller screens */
 }
 
 .nav-main-links li {
-  margin: 0 1.2rem; 
+  margin: 0 1.2rem; /* Horizontal space between each main navigation link */
 }
 
 .nav-main-links li a {
-  color: var(--text-primary);
-  text-decoration: none;
+  color: var(--text-primary); /* Text color for the links */
+  text-decoration: none; /* Removes default underline */
   font-size: 1.05rem;
   font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s ease;
-  position: relative;
-  padding-bottom: 5px;
+  transition: color 0.3s ease, transform 0.2s ease; /* Smooth hover effects for color and slight lift */
+  position: relative; /* Needed for the underline animation */
+  padding-bottom: 5px; /* Space for the underline */
 }
 
+/* What happens when you hover over a main navigation link */
 .nav-main-links li a:hover {
-  color: var(--accent-teal);
-  transform: translateY(-2px);
+  color: var(--accent-teal); /* Changes text color to accent teal */
+  transform: translateY(-2px); /* Lifts the link slightly */
 }
 
+/* The animated underline effect for main navigation links */
 .nav-main-links li a::after {
-  content: '';
-  position: absolute;
+  content: ''; /* Creates a content box for the underline */
+  position: absolute; /* Positions it relative to the link */
   left: 0;
   bottom: 0;
-  width: 0;
+  width: 0; /* Starts with no width (invisible) */
   height: 2px;
-  background-color: var(--accent-teal);
-  transition: width 0.3s ease;
+  background-color: var(--accent-teal); /* Color of the underline */
+  transition: width 0.3s ease; /* Smooth animation for width change */
 }
 
+/* What happens to the underline when you hover over a main navigation link */
 .nav-main-links li a:hover::after {
-  width: 100%;
+  width: 100%; /* Makes the underline appear */
 }
 
-
+/* Styles for the authentication/logout links section (on the far right) */
 .nav-auth-links {
-  list-style: none;
+  list-style: none; /* Removes bullet points */
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0; 
+  display: flex; /* Uses Flexbox for arranging links */
+  align-items: center; /* Vertically aligns links */
+  flex-shrink: 0; /* Prevents these links from shrinking when space is tight */
 }
 
 .nav-auth-links li {
-  margin-left: 1.5rem; 
+  margin-left: 1.5rem; /* Space between login/register/logout links */
 }
 
 .nav-auth-links li a {
@@ -102,8 +106,8 @@
 .nav-auth-links li a::after {
   content: '';
   position: absolute;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   width: 0;
   height: 2px;
   background-color: var(--accent-teal);
@@ -114,27 +118,29 @@
   width: 100%;
 }
 
-
+/* Styles specifically for the logout button */
 .navbar-logout-button {
-  background: none;
-  border: none;
-  color: #DC3545; 
+  background: none; /* No background */
+  border: none; /* No border */
+  color: #DC3545; /* Red color for logout text */
   font-size: 1.05rem;
   font-weight: 500;
-  cursor: pointer;
+  cursor: pointer; /* Shows it's clickable */
   padding: 0;
-  display: flex; 
-  align-items: center;
-  gap: 5px; 
-  transition: color 0.3s ease;
+  display: flex; /* Arranges icon and text in a row */
+  align-items: center; /* Vertically aligns icon and text */
+  gap: 5px; /* Space between icon and text */
+  transition: color 0.3s ease; /* Smooth color change on hover */
 }
 
 .navbar-logout-button:hover {
-  color: #C82333; 
+  color: #C82333; /* Darker red on hover */
 }
 
+/* Media queries for responsiveness: These blocks adjust styles for different screen sizes. */
 
 @media (max-width: 1024px) {
+  /* Adjustments for medium screens (like tablets in landscape mode) */
   .navbar {
     padding: 1rem 2rem;
   }
@@ -156,9 +162,10 @@
 }
 
 @media (max-width: 768px) {
+  /* Adjustments for smaller tablets and larger phones */
   .navbar {
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column; /* Stacks navbar sections (brand, main links, auth links) vertically */
+    align-items: center; /* Centers sections horizontally */
     padding: 1rem 1.5rem;
   }
   .nav-brand {
@@ -167,42 +174,43 @@
     margin-bottom: 1rem;
   }
   .nav-main-links {
-    flex-direction: column;
+    flex-direction: column; /* Main links stack vertically */
     width: 100%;
-    margin: 0; 
+    margin: 0; /* Resets automatic margins */
     padding: 0;
     align-items: center;
-    order: 2; 
+    order: 2; /* Puts main links below the brand */
   }
   .nav-main-links li {
-    margin: 0.5rem 0;
+    margin: 0.5rem 0; /* Vertical spacing between stacked links */
     width: 100%;
     text-align: center;
   }
   .nav-main-links li a, .nav-auth-links li a {
     padding: 0.8rem 0;
-    display: block;
+    display: block; /* Links take full width of their list item */
   }
   .nav-main-links li a::after, .nav-auth-links li a::after {
-    display: none;
+    display: none; /* Hides underline animation on smaller screens */
   }
   .nav-auth-links {
     width: 100%;
-    justify-content: center; 
+    justify-content: center; /* Centers auth links when stacked */
     margin-top: 0.5rem;
-    order: 3; 
+    order: 3; /* Puts auth links at the very bottom */
   }
   .nav-auth-links li {
-    margin: 0 0.5rem; 
+    margin: 0 0.5rem; /* Small horizontal space between auth links */
   }
   .navbar-logout-button {
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem; /* Adjusts padding for the button */
     width: auto;
     margin: 0;
   }
 }
 
 @media (max-width: 480px) {
+  /* Adjustments for very small mobile screens */
   .navbar {
     padding: 0.8rem 1rem;
   }

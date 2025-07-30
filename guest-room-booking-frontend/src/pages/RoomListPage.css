@@ -1,150 +1,143 @@
+/* This styles the grid layout for our room cards */
 .room-list-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 3rem;
-  justify-content: center;
-  padding: 1.5rem;
+  display: grid; /* Uses CSS Grid for a flexible layout */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Creates responsive columns */
+  gap: 3rem; /* Space between the room cards */
+  justify-content: center; /* Centers the grid on the page */
+  padding: 1.5rem; /* Padding inside the grid */
 }
 
+/* Styles for each individual room card */
 .room-card {
-  background-color: var(--white);
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 8px 25px var(--shadow-sm);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
+  background-color: var(--white); /* White background for the card */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  box-shadow: 0 8px 25px var(--shadow-sm); /* Subtle shadow */
+  overflow: hidden; /* Hides anything outside the rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  display: flex; /* Arranges items inside the card vertically */
   flex-direction: column;
-  height: 100%;
-  border: 1px solid var(--border-light);
+  height: 100%; /* Ensures all cards in a row have the same height */
+  border: 1px solid var(--border-light); /* Light border */
 }
 
+/* What happens when you hover over a room card */
 .room-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px var(--shadow-md);
+  transform: translateY(-8px); /* Lifts the card slightly */
+  box-shadow: 0 15px 40px var(--shadow-md); /* Stronger shadow on hover */
 }
 
+/* Styles for the room image inside the card */
 .room-image {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
+  width: 100%; /* Image fills the width of its container */
+  height: 240px; /* Fixed height for the image */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* Smooth zoom on hover */
 }
 
+/* What happens to the image when you hover over the card */
 .room-card:hover .room-image {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Zooms the image in slightly */
 }
 
+/* Styles for the text information section within the room card */
 .room-info {
-  padding: 1.8rem;
+  padding: 1.8rem; /* Spacing inside the info section */
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 1; /* Allows this section to grow and push the button to the bottom */
 }
 
+/* Styles for the room name heading */
 .room-info h3 {
   font-size: 1.7rem;
   font-weight: 700;
-  color: var(--primary-dark-blue);
-  margin-bottom: 0.6rem;
-  line-height: 1.3;
+  color: var(--primary-dark-blue); /* Main dark blue for headings */
 }
 
+/* Styles for general paragraph text within room info (e.g., Beds, Size) */
 .room-info p {
   font-size: 1rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
+  color: var(--text-secondary); /* Lighter grey text */
 }
 
+/* Styles for the room price */
 .room-price {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--accent-teal);
+  color: var(--accent-teal); /* Teal color for the price */
   margin-top: 1.2rem;
   margin-bottom: 1.8rem;
 }
 
+/* Styles for the "View Details" button */
 .view-details-button {
-  display: block;
-  width: 100%;
-  padding: 1rem 1.5rem;
-  background-color: var(--primary-dark-blue);
-  color: var(--white);
+  display: block; /* Makes it a block-level element */
+  width: 100%; /* Button fills its container */
+  padding: 1rem 1.5rem; /* Inner spacing */
+  background-color: var(--primary-dark-blue); /* Dark blue background */
+  color: var(--white); /* White text */
   text-align: center;
-  text-decoration: none;
+  text-decoration: none; /* No underline */
   border-radius: var(--border-radius-sm);
   font-size: 1.05rem;
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  margin-top: auto;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  margin-top: auto; /* Pushes the button to the bottom of the card */
 }
 
+/* What happens when you hover over the "View Details" button */
 .view-details-button:hover {
-  background-color: #11115e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px var(--shadow-sm);
+  background-color: #11115e; /* Slightly darker blue on hover */
+  transform: translateY(-2px); /* Lifts the button slightly */
+  box-shadow: 0 6px 15px var(--shadow-sm); /* Adds a shadow */
 }
 
+/* Message shown when no rooms are available */
 .no-rooms-message {
   text-align: center;
   font-size: 1.15rem;
   color: var(--text-secondary);
   padding: 4rem;
-  border: 2px dashed var(--border-light);
+  border: 2px dashed var(--border-light); /* Dashed border */
   border-radius: var(--border-radius-md);
   margin-top: 2.5rem;
   background-color: var(--light-bg-offwhite);
 }
 
+/* Media queries for responsiveness: Adjusts layout/sizes for different screen widths. */
+
 @media (max-width: 1024px) {
+  /* Adjustments for medium screens (tablets/laptops) */
   .room-list-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2.5rem;
     padding: 1rem;
   }
   .room-image {
-    height: 200px;
+    height: 200px; /* Shorter image height */
   }
-  .room-info {
-    padding: 1.5rem;
-  }
-  .room-info h3 {
-    font-size: 1.5rem;
-  }
-  .room-price {
-    font-size: 1.25rem;
-  }
-  .view-details-button {
-    padding: 0.9rem 1.2rem;
-    font-size: 1rem;
-  }
+  /* ... (other adjustments) ... */
 }
 
 @media (max-width: 768px) {
+  /* Adjustments for smaller screens (tablets/phones) */
   .room-list-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Cards stack vertically */
     padding: 0;
   }
   .room-card {
-    max-width: 450px;
-    margin: 0 auto;
-    border-radius: var(--border-radius-md);
+    max-width: 450px; /* Limits width when stacked */
+    margin: 0 auto; /* Centers the card when stacked */
   }
   .room-image {
     height: 220px;
   }
-  .room-info {
-    padding: 1.2rem;
-  }
-  .room-info h3 {
-    font-size: 1.4rem;
-  }
-  .room-price {
-    font-size: 1.15rem;
-  }
+  /* ... (other adjustments) ... */
 }
 
 @media (max-width: 480px) {
+  /* Adjustments for very small mobile screens */
   .room-list-grid {
     gap: 1.5rem;
   }

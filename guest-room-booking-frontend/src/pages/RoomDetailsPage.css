@@ -1,57 +1,62 @@
-
+/* This styles the top part of the room details page, where the image and info sit side-by-side */
 .room-details-top-section {
-  display: flex;
-  gap: 2.5rem;
+  display: flex; /* Makes the image and info go next to each other */
+  gap: 2.5rem; /* Space between the image and the info box */
   margin-top: 2.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+  flex-wrap: wrap; /* Allows them to stack on smaller screens */
+  justify-content: center; /* Centers them if they don't fill the space */
+  align-items: flex-start; /* Aligns them to the top */
 }
 
+/* Container for the room image */
 .room-details-image-container {
-  flex: 1.5;
-  min-width: 350px;
-  max-width: 600px;
+  flex: 1.5; /* Makes the image take a bit more space than the info box */
+  min-width: 350px; /* Minimum width for the image container */
+  max-width: 600px; /* Max width for the image container on big screens */
   position: relative;
-  overflow: hidden;
-  border-radius: var(--border-radius-lg);
-  box-shadow: 0 10px 30px var(--shadow-md);
-  height: fit-content;
-  align-self: flex-start;
+  overflow: hidden; /* Hides anything that goes outside its rounded corners */
+  border-radius: var(--border-radius-lg); /* Nice rounded corners */
+  box-shadow: 0 10px 30px var(--shadow-md); /* Adds a shadow for depth */
+  height: fit-content; /* Adjusts height based on content */
+  align-self: flex-start; /* Aligns itself to the top within the flex container */
 }
 
+/* Styles for the actual room image */
 .room-details-image {
-  width: 100%;
-  max-height: 450px;
-  height: auto;
-  min-height: 250px;
-  object-fit: cover;
+  width: 100%; /* Makes the image fill its container */
+  max-height: 450px; /* Limits how tall the image can get */
+  height: auto; /* Keeps the image's proportions correct */
+  min-height: 250px; /* Ensures a minimum height */
+  object-fit: cover; /* Makes sure the image covers the whole area without stretching */
   display: block;
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--border-radius-lg); /* Rounded corners for the image */
 }
 
+/* The box containing the room's text details */
 .room-details-info {
-  flex: 1;
-  min-width: 400px;
-  background-color: var(--light-bg-offwhite);
-  padding: 2.5rem;
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 4px 15px var(--shadow-sm);
-  border: 1px solid var(--border-light);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex: 1; /* Makes this box take less space than the image (relative to flex: 1.5) */
+  min-width: 400px; /* Minimum width for the info box */
+  background-color: var(--light-bg-offwhite); /* Light background for the info box */
+  padding: 2.5rem; /* Spacing inside the info box */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  box-shadow: 0 4px 15px var(--shadow-sm); /* Subtle shadow */
+  border: 1px solid var(--border-light); /* Light border */
+  display: flex; /* Makes it a flex container for its own content */
+  flex-direction: column; /* Stacks its content vertically */
+  justify-content: space-between; /* Pushes the "Book Now" button to the bottom */
 }
 
+/* Style for the "About this Room" heading */
 .room-details-info h3 {
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--primary-dark-blue);
+  color: var(--primary-dark-blue); /* Main dark blue color */
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light); /* A line below the heading */
 }
 
+/* Style for the room description text */
 .room-description {
   font-size: 1.15rem;
   color: var(--text-primary);
@@ -59,43 +64,48 @@
   margin-bottom: 2rem;
 }
 
+/* Style for individual detail items (like Beds, Amenities) */
 .detail-item {
   font-size: 1.05rem;
   color: var(--text-secondary);
   margin-bottom: 0.9rem;
 }
 
+/* Makes the labels (e.g., "Location:") bold */
 .detail-item strong {
   color: var(--text-primary);
   font-weight: 600;
 }
 
+/* Styling for the "Book Now" button on this page */
 .room-details-book-button {
-  width: auto;
-  min-width: 180px;
-  margin-top: 2.5rem;
+  width: auto; /* Button width fits its content */
+  min-width: 180px; /* Ensures a minimum width */
+  margin-top: 2.5rem; /* Space above the button */
   padding: 1rem 2rem;
   font-size: 1.15rem;
   font-weight: 700;
-  align-self: flex-end;
+  align-self: flex-end; /* Pushes the button to the bottom-right within its container */
   border-radius: var(--border-radius-sm);
-  background-color: var(--accent-teal); 
-  color: var(--white);
+  background-color: var(--accent-teal); /* Teal background */
+  color: var(--white); /* White text */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effects */
 }
 
 .room-details-book-button:hover {
-  background-color: #006666; 
+  background-color: #006666; /* Darker teal on hover */
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Container for the "Back to Room Listings" link at the very bottom */
 .back-link-container {
   margin-top: 3.5rem;
   text-align: center;
 }
 
+/* Style for the "Back to Room Listings" link */
 .back-link {
   color: var(--primary-dark-blue);
   text-decoration: none;
@@ -105,11 +115,14 @@
 }
 
 .back-link:hover {
-  color: var(--accent-orange);
+  color: var(--accent-orange); /* Orange on hover */
   text-decoration: underline;
 }
 
+/* Media queries for responsiveness: Adjusts layout/sizes for different screen widths. */
+
 @media (max-width: 1200px) {
+  /* Adjustments for slightly smaller desktops */
   .room-details-image-container {
     max-width: 550px;
   }
@@ -123,8 +136,9 @@
 }
 
 @media (max-width: 1024px) {
+  /* Adjustments for tablets and smaller laptops */
   .room-details-top-section {
-    flex-direction: column;
+    flex-direction: column; /* Stacks image and info vertically */
     align-items: center;
     gap: 3rem;
     margin-top: 2rem;
@@ -135,7 +149,7 @@
     height: auto;
   }
   .room-details-image {
-    height: 350px;
+    height: 350px; /* Adjusted fixed height for stacked layout */
   }
   .room-details-info {
     max-width: 90%;
@@ -149,7 +163,7 @@
     font-size: 1.05rem;
   }
   .room-details-book-button {
-    width: 100%;
+    width: 100%; /* Button becomes full width when stacked */
     align-self: center;
     padding: 1.1rem;
     font-size: 1.1rem;
@@ -158,6 +172,7 @@
 }
 
 @media (max-width: 768px) {
+  /* Adjustments for smaller tablets and large phones */
   .room-details-top-section {
     gap: 2rem;
     margin-top: 1.5rem;
@@ -187,6 +202,7 @@
 }
 
 @media (max-width: 480px) {
+  /* Adjustments for very small mobile screens */
   .room-details-image {
     height: 220px;
   }

@@ -1,85 +1,104 @@
-import React, { useState, useEffect } from 'react';
-import './BookingHistoryPage.css';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { useAuth } from '../../contexts/AuthContext';
+import React, { useState, useEffect } from 'react'; // React hooks for managing data and side effects
+import './BookingHistoryPage.css'; // Our specific styles for this page
+import { useNavigate } from 'react-router-dom'; // For navigating between pages
+import axios from 'axios'; // Our tool for talking to the backend
+import { useAuth } from '../../contexts/AuthContext'; // Our custom hook to get login status and user info
 
+// This is the Booking History Page component for Customers.
+// It shows a list of all bookings a customer has made (past and upcoming).
 function BookingHistoryPage() {
-  const navigate = useNavigate();
-  const { user, isAuthenticated } = useAuth();
-  const [bookings, setBookings] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [message, setMessage] = useState(null);
+  const navigate = useNavigate(); // Lets us jump to other pages
+  const { user, isAuthenticated } = useAuth(); // Checks if the user is logged in and gets their info
 
+  // States to hold our bookings data and manage loading/errors
+  const [bookings, setBookings] = useState([]); // Holds all booking data for this customer
+  const [loading, setLoading] = useState(true); // True when we're waiting for booking data
+  const [error, setError] = useState(null); // Any problems? They go here.
+  const [message, setMessage] = useState(null); // Success messages live here.
+
+  // Function to fetch all bookings for the logged-in customer
   const fetchBookings = async () => {
+    // If no one's logged in (or we don't have user info), stop loading and don't fetch
     if (!isAuthenticated || !user) {
       setLoading(false);
       return;
     }
     try {
+      // Ask our backend for bookings made by the current customer
+      // This hits: GET /api/bookings/customer/me (protected route)
       const { data } = await axios.get('http://localhost:5000/api/bookings/customer/me');
-      setBookings(data.data);
-      setLoading(false);
+      setBookings(data.data); // Put the bookings data into our state
+      setLoading(false); // Done loading!
     } catch (err) {
-      console.error('Error fetching customer bookings:', err);
-      setError(err.response?.data?.message || 'Failed to load your booking history.');
+      console.error('Problem fetching customer bookings:', err); // Log any serious errors
+      setError(err.response?.data?.message || 'Couldn\'t load your booking history.'); // Show a friendly error message
       setLoading(false);
+      // If the backend says we're unauthorized (401), send them to login
       if (err.response && err.response.status === 401) {
         navigate('/login');
       }
     }
   };
 
+  // When the page loads or user/auth status changes, let's fetch the bookings
   useEffect(() => {
-    fetchBookings();
-  }, [isAuthenticated, user]);
+    fetchBookings(); // Go get the bookings when the component first shows up
+  }, [isAuthenticated, user]); // This effect runs when user or auth status changes
 
+  // What happens when the "Cancel Booking" button is clicked
   const handleCancelBooking = async (bookingId) => {
+    // Ask for confirmation before canceling
     if (window.confirm('Are you sure you want to cancel this booking? This action cannot be undone.')) {
       try {
+        // Send a PUT request to cancel the booking on the backend
+        // This hits: PUT /api/bookings/:bookingId/cancel (protected route)
         const { data } = await axios.put(`http://localhost:5000/api/bookings/${bookingId}/cancel`);
-        setMessage(data.message || 'Booking cancelled successfully!');
-        fetchBookings(); 
+        setMessage(data.message || 'Booking cancelled successfully!'); // Show a success message
+        fetchBookings(); // Re-fetch all bookings to show the updated status in the list
       } catch (err) {
-        console.error('Error cancelling booking:', err.response?.data?.message || err.message);
-        setError(err.response?.data?.message || 'Failed to cancel booking.');
+        console.error('Problem cancelling booking:', err); // Log any errors
+        setError(err.response?.data?.message || 'Couldn\'t cancel booking.'); // Show a friendly error message
       }
     }
   };
 
+  // What happens when the "Back" button is clicked
   const handleBack = () => {
-    navigate(-1);
+    navigate(-1); // Goes back to the previous page in browser history
   };
 
+  // Show a loading message while data is being fetched
   if (loading) {
     return <div className="page-container page-title">Loading Booking History...</div>;
   }
 
+  // If there was an error loading data (and no success message yet), show it
   if (error && !message) {
     return <div className="page-container page-title error-message">{error}</div>;
   }
 
   return (
     <div className="page-container booking-history-container">
-      <button onClick={handleBack} className="back-button">← Back</button>
-      <h2 className="page-title">My Booking History</h2>
-      {error && <p className="error-message">{error}</p>}
-      {message && <p className="success-message">{message}</p>}
+      <button onClick={handleBack} className="back-button">← Back</button> {/* Back button */}
+      <h2 className="page-title">My Booking History</h2> {/* Page title */}
+      {error && <p className="error-message">{error}</p>} {/* Shows general error message */}
+      {message && <p className="success-message">{message}</p>} {/* Shows success message */}
 
-      {bookings.length === 0 ? (
+      {bookings.length === 0 ? ( // If the customer has no bookings, show a message
         <p className="no-bookings-message">You have no past or upcoming bookings.</p>
       ) : (
+        // If there are bookings, display them in a list
         <div className="booking-list">
-          {bookings.map(booking => (
-            <div key={booking._id} className="booking-item-card">
-              <div className="booking-info">
-                <h3>{booking.room?.name || 'N/A'}</h3>
-                <p>Check-in: <strong>{new Date(booking.checkInDate).toLocaleDateString()}</strong> | Check-out: <strong>{new Date(booking.checkOutDate).toLocaleDateString()}</strong></p>
-                <p>Total Price: <strong>₹{booking.totalPrice}</strong></p>
+          {bookings.map(booking => ( // Loop through each booking and create a card for it
+            <div key={booking._id} className="booking-item-card"> {/* Each booking gets its own card */}
+              <div className="booking-info"> {/* Booking details */}
+                <h3>{booking.room?.name || 'N/A'}</h3> {/* Room name (with fallback) */}
+                <p>Check-in: <strong>{new Date(booking.checkInDate).toLocaleDateString()}</strong> | Check-out: <strong>{new Date(booking.checkOutDate).toLocaleDateString()}</strong></p> {/* Dates */}
+                <p>Total Price: <strong>₹{booking.totalPrice}</strong></p> {/* Total price */}
               </div>
-              <div className="booking-status-actions">
-                <span className={`booking-status ${booking.status.toLowerCase()}`}>{booking.status}</span>
+              <div className="booking-status-actions"> {/* Status badge and action button */}
+                <span className={`booking-status ${booking.status.toLowerCase()}`}>{booking.status}</span> {/* Booking status badge */}
+                {/* Only show "Cancel Booking" button if status is pending or confirmed */}
                 {(booking.status === 'pending' || booking.status === 'confirmed') && (
                   <button onClick={() => handleCancelBooking(booking._id)} className="cancel-button">Cancel Booking</button>
                 )}
@@ -92,4 +111,4 @@ function BookingHistoryPage() {
   );
 }
 
-export default BookingHistoryPage;
+export default BookingHistoryPage; // Make this component available

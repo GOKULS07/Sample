@@ -1,32 +1,32 @@
 .login-container {
-  background-color: var(--white);
-  padding: 3.5rem 3rem;
-  max-width: 480px;
-  margin: 3rem auto;
-  border-radius: var(--border-radius-lg);
-  box-shadow: 0 10px 30px var(--shadow-md);
-  border: 1px solid var(--border-light);
-  text-align: center;
+  background-color: var(--white); /* White background for the main login box */
+  padding: 3.5rem 3rem; /* Spacing inside the box */
+  max-width: 480px; /* Controls how wide the box can get */
+  margin: 3rem auto; /* Centers the box on the page */
+  border-radius: var(--border-radius-lg); /* Nice rounded corners */
+  box-shadow: 0 10px 30px var(--shadow-md); /* Adds a subtle shadow for depth */
+  border: 1px solid var(--border-light); /* A thin, light border */
+  text-align: center; /* Centers text elements inside */
 }
 
 .login-container h2 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: var(--primary-dark-blue);
-  margin-bottom: 2.5rem;
+  font-size: 2.8rem; /* Large title font size */
+  font-weight: 800; /* Extra bold title */
+  color: var(--primary-dark-blue); /* Our main dark blue color for headings */
+  margin-bottom: 2.5rem; /* Space below the title */
 }
 
 .login-form .form-group {
-  margin-bottom: 1.8rem;
-  text-align: left;
+  margin-bottom: 1.8rem; /* Vertical space between each input field group */
+  text-align: left; /* Aligns labels and inputs to the left */
 }
 
 .login-form label {
-  display: block;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  font-size: 1.05rem;
+  display: block; /* Makes the label take its own line above the input */
+  margin-bottom: 0.8rem; /* Space between the label and its input field */
+  font-weight: 600; /* Makes label text a bit bold */
+  color: var(--text-primary); /* Darker text color for labels */
+  font-size: 1.05rem; /* Font size for labels */
 }
 
 .login-form input[type="text"],
@@ -34,68 +34,71 @@
 .login-form input[type="email"],
 .login-form input[type="tel"],
 .login-form select {
-  width: 100%;
-  padding: 1.1rem 18px;
-  border: 1px solid var(--border-light);
-  border-radius: var(--border-radius-sm);
-  font-size: 1.1rem;
-  color: var(--text-primary);
-  background-color: var(--light-bg-offwhite);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Makes the input fields stretch across the container */
+  padding: 1.1rem 18px; /* Inner spacing within input fields */
+  border: 1px solid var(--border-light); /* Light border around inputs */
+  border-radius: var(--border-radius-sm); /* Slightly rounded input corners */
+  font-size: 1.1rem; /* Font size for text inside inputs */
+  color: var(--text-primary); /* Text color for input content */
+  background-color: var(--light-bg-offwhite); /* Soft off-white background for inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth animation for focus effects */
 }
 
 .login-form input:focus,
 .login-form select:focus {
-  outline: none;
-  border-color: var(--accent-teal);
-  box-shadow: 0 0 0 4px rgba(0, 128, 128, 0.2);
+  outline: none; /* Removes the default outline when an input is clicked */
+  border-color: var(--accent-teal); /* Changes border to our accent teal color */
+  box-shadow: 0 0 0 4px rgba(0, 128, 128, 0.2); /* Adds a glowing effect */
 }
 
 .login-button {
-  width: 100%;
-  padding: 1.2rem;
-  background-color: var(--accent-teal);
-  color: var(--white);
-  border: none;
-  border-radius: var(--border-radius-sm);
-  font-size: 1.25rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  margin-top: 2rem;
+  width: 100%; /* Button takes full width */
+  padding: 1.2rem; /* Inner spacing of the button */
+  background-color: var(--accent-teal); /* Our accent teal background for the button */
+  color: var(--white); /* White text on the button */
+  border: none; /* No border for the button */
+  border-radius: var(--border-radius-sm); /* Rounded corners for the button */
+  font-size: 1.25rem; /* Font size for button text */
+  font-weight: 700; /* Bold text for the button */
+  cursor: pointer; /* Changes cursor to a pointer, showing it's clickable */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth hover animations */
+  margin-top: 2rem; /* Space above the button */
 }
 
 .login-button:hover {
-  background-color: #006666;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px var(--shadow-md);
+  background-color: #006666; /* Darker teal when the mouse hovers over it */
+  transform: translateY(-4px); /* Lifts the button up slightly */
+  box-shadow: 0 10px 25px var(--shadow-md); /* Adds a stronger shadow on hover */
 }
 
 .login-form p {
-  margin-top: 2rem;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+  margin-top: 2rem; /* Space above the paragraph (e.g., "Don't have an account?") */
+  font-size: 0.95rem; /* Font size for general paragraph text in the form */
+  color: var(--text-secondary); /* A lighter grey color for this text */
 }
 
 .login-form p a {
-  color: var(--accent-teal);
-  text-decoration: none;
-  font-weight: 600;
-  transition: text-decoration 0.2s ease;
+  color: var(--accent-teal); /* Our accent teal color for links */
+  text-decoration: none; /* Removes the default underline from links */
+  font-weight: 600; /* Makes link text bold */
+  transition: text-decoration 0.2s ease; /* Smooth animation for underline on hover */
 }
 
 .login-form p a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Adds an underline when the mouse hovers over the link */
 }
 
+/* Media queries for responsiveness: These blocks adjust styles for different screen sizes. */
+
 @media (max-width: 768px) {
+  /* Styles that apply when the screen width is 768px or less (e.g., for tablets) */
   .login-container {
-    padding: 2.5rem 2rem;
-    margin: 2rem 1.5rem;
-    max-width: 450px;
+    padding: 2.5rem 2rem; /* Reduced padding for smaller screens */
+    margin: 2rem 1.5rem; /* Adjusted margins */
+    max-width: 450px; /* Adjusted max-width */
   }
   .login-container h2 {
-    font-size: 2.2rem;
+    font-size: 2.2rem; /* Smaller title font size */
     margin-bottom: 2rem;
   }
   .login-form .form-group {
@@ -120,10 +123,11 @@
 }
 
 @media (max-width: 480px) {
+  /* Styles that apply when the screen width is 480px or less (e.g., for mobile phones) */
   .login-container {
     padding: 2rem 1.5rem;
     margin: 1.5rem 0.8rem;
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-md); /* Slightly less rounded corners */
   }
   .login-container h2 {
     font-size: 2rem;

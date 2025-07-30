@@ -1,42 +1,45 @@
 .not-found-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 80px);
-  text-align: center;
-  padding: 3rem;
-  background-color: var(--light-bg-offwhite);
-  border-radius: var(--border-radius-lg);
-  box-shadow: 0 10px 30px var(--shadow-sm);
-  margin: 2.5rem auto;
-  max-width: 900px;
+  display: flex; /* Arranges items in a row or column */
+  flex-direction: column; /* Stacks items vertically */
+  justify-content: center; /* Centers items vertically in the container */
+  align-items: center; /* Centers items horizontally in the container */
+  min-height: calc(100vh - 80px); /* Ensures it takes up most of the screen height */
+  text-align: center; /* Centers text within the container */
+  padding: 3rem; /* Spacing inside the container */
+  background-color: var(--light-bg-offwhite); /* A light, off-white background */
+  border-radius: var(--border-radius-lg); /* Rounded corners */
+  box-shadow: 0 10px 30px var(--shadow-sm); /* Adds a subtle shadow */
+  margin: 2.5rem auto; /* Centers the container on the page */
+  max-width: 900px; /* Limits how wide the container can get */
 }
 
 .not-found-title {
-  font-size: 9rem;
-  font-weight: 800;
-  color: var(--primary-dark-blue);
-  margin-bottom: 1.5rem;
-  line-height: 1;
-  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+  font-size: 9rem; /* Very large font size for the "404" text */
+  font-weight: 800; /* Extra bold */
+  color: var(--primary-dark-blue); /* Our main dark blue color */
+  margin-bottom: 1.5rem; /* Space below the title */
+  line-height: 1; /* Tight line spacing */
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05); /* A slight text shadow for depth */
 }
 
 .not-found-message {
-  font-size: 1.8rem;
-  color: var(--text-primary);
-  margin-bottom: 3rem;
-  max-width: 600px;
+  font-size: 1.8rem; /* Font size for the error message text */
+  color: var(--text-primary); /* Darker text color */
+  margin-bottom: 3rem; /* Space below the message */
+  max-width: 600px; /* Limits how wide the message text can get */
   line-height: 1.5;
 }
 
+/* Media queries for responsiveness: Adjusts styles for different screen sizes. */
+
 @media (max-width: 768px) {
+  /* Adjustments for medium screens (like tablets) */
   .not-found-container {
     padding: 2.5rem;
     margin: 2rem 1rem;
   }
   .not-found-title {
-    font-size: 7rem;
+    font-size: 7rem; /* Smaller title on tablets */
     margin-bottom: 1rem;
   }
   .not-found-message {
@@ -46,12 +49,13 @@
 }
 
 @media (max-width: 480px) {
+  /* Adjustments for small mobile screens */
   .not-found-container {
     padding: 2rem;
     margin: 1.5rem 0.5rem;
   }
   .not-found-title {
-    font-size: 5rem;
+    font-size: 5rem; /* Even smaller title on mobile */
   }
   .not-found-message {
     font-size: 1.2rem;
