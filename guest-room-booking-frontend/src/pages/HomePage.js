@@ -15,7 +15,7 @@ function HomePage() {
             <Link to="/rooms" className="primary-button hero-button-primary">Explore Rooms</Link> {/* A button to jump into Browse rooms */}
             
           </div>
-        </div
+        </div>
       </header>
 
       {/* This section highlights the key reasons why someone should use our Room Booker app */}
