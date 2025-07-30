@@ -92,7 +92,7 @@ function EditRoomPage() {
           'Content-Type': 'multipart/form-data',
         },
       };
-      await axios.put(`http://localhost:5000/api/rooms/${id}`, roomData, config);
+      await axios.put(`https://room-booker.onrender.com/api/rooms/${id}`, roomData, config);
       alert('Room updated successfully!');
       navigate('/owner/manage-rooms');
     } catch (err) {
