@@ -1,0 +1,41 @@
+[
+  {
+    "owner": "66a7b7d0c7d7d7d7d7d7d7d7", 
+    "name": "Cozy City Apartment",
+    "floorSize": 450,
+    "numberOfBeds": 2,
+    "amenities": ["Wi-Fi", "AC", "Private Bathroom", "Smart TV"],
+    "dailyRentAmount": 2500,
+    "minBookingDays": 1,
+    "maxBookingDays": 14,
+    "photos": ["http://localhost:5000/uploads/room1_cozy_city.jpg"],
+    "description": "A charming and cozy apartment located in the heart of the city, perfect for couples or small families.",
+    "isAvailable": true
+  },
+  {
+    "owner": "66a7b7d0c7d7d7d7d7d7d7d7", 
+    "name": "Spacious Family Home",
+    "floorSize": 1800,
+    "numberOfBeds": 4,
+    "amenities": ["Wi-Fi", "AC", "Full Kitchen", "Garden", "Parking"],
+    "dailyRentAmount": 6000,
+    "minBookingDays": 2,
+    "maxBookingDays": 21,
+    "photos": ["http://localhost:5000/uploads/room2_family_home.jpg"],
+    "description": "A large, comfortable home ideal for big families, featuring a spacious garden and all modern amenities.",
+    "isAvailable": true
+  },
+  {
+    "owner": "66a7b7d0c7d7d7d7d7d7d7d8", 
+    "name": "Downtown Studio with View",
+    "floorSize": 300,
+    "numberOfBeds": 1,
+    "amenities": ["Wi-Fi", "AC", "Balcony", "Coffee Maker"],
+    "dailyRentAmount": 1800,
+    "minBookingDays": 1,
+    "maxBookingDays": 7,
+    "photos": ["http://localhost:5000/uploads/room3_downtown_studio.jpg"],
+    "description": "Stylish studio apartment with a stunning downtown view, perfect for solo travelers or business trips.",
+    "isAvailable": true
+  }
+]
