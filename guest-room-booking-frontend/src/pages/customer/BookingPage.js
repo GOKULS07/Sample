@@ -138,7 +138,7 @@ function BookingPage() {
     };
 
     try {
-      const { data } = await axios.post('http://localhost:5000/api/bookings', bookingData);
+      const { data } = await axios.post('https://room-booker.onrender.com/api/bookings', bookingData);
       setMessage(data.message || 'Booking confirmed successfully!');
       alert('Booking confirmed successfully!');
       navigate('/customer/bookings');
