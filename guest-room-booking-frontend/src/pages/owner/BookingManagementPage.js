@@ -18,7 +18,7 @@ function BookingManagementPage() {
       return;
     }
     try {
-      const { data } = await axios.get('http://localhost:5000/api/bookings/owner/me');
+      const { data } = await axios.get('https://room-booker.onrender.com/api/bookings/owner/me');
       setBookings(data.data);
       setLoading(false);
     } catch (err) {
