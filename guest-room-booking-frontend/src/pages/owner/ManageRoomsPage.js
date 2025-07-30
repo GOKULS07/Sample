@@ -33,7 +33,7 @@ function ManageRoomsPage() {
   const handleDelete = async (roomId) => {
     if (window.confirm('Are you sure you want to delete this room?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/rooms/${roomId}`);
+        await axios.delete(`https://room-booker.onrender.com/api/rooms/${roomId}`);
         alert('Room deleted successfully!');
         setRooms(rooms.filter(room => room._id !== roomId)); 
       } catch (err) {
