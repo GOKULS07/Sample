@@ -1,0 +1,29 @@
+[
+  {
+    "room": "66a7b8e0c7d7d7d7d7d7d7d9", 
+    "customer": "66a7b9f0c7d7d7d7d7d7d7da",
+    "owner": "66a7b7d0c7d7d7d7d7d7d7d7",
+    "checkInDate": "2025-08-10T00:00:00.000Z",
+    "checkOutDate": "2025-08-15T00:00:00.000Z",
+    "totalPrice": 12500,
+    "status": "confirmed"
+  },
+  {
+    "room": "66a7b8e0c7d7d7d7d7d7d7d9", 
+    "customer": "66a7b9f0c7d7d7d7d7d7d7db",
+    "owner": "66a7b7d0c7d7d7d7d7d7d7d7",
+    "checkInDate": "2025-09-01T00:00:00.000Z",
+    "checkOutDate": "2025-09-03T00:00:00.000Z",
+    "totalPrice": 5000,
+    "status": "pending"
+  },
+  {
+    "room": "66a7b8e0c7d7d7d7d7d7d7da", 
+    "customer": "66a7b9f0c7d7d7d7d7d7d7da",
+    "owner": "66a7b7d0c7d7d7d7d7d7d7d7",
+    "checkInDate": "2025-07-20T00:00:00.000Z",
+    "checkOutDate": "2025-07-25T00:00:00.000Z",
+    "totalPrice": 30000,
+    "status": "completed"
+  }
+]
