@@ -1,0 +1,26 @@
+[
+  {
+    "email": "house.owner1@example.com",
+    "password": "password123",  
+    "mobileNumber": "9876543210",
+    "role": "house_owner"
+  },
+  {
+    "email": "house.owner2@example.com",
+    "password": "ownerpass",
+    "mobileNumber": "9988776655",
+    "role": "house_owner"
+  },
+  {
+    "email": "customer1@example.com",
+    "password": "customerpass",
+    "mobileNumber": "8887776665",
+    "role": "customer"
+  },
+  {
+    "email": "customer2@example.com",
+    "password": "guestpass",
+    "mobileNumber": "7776665554",
+    "role": "customer"
+  }
+]
