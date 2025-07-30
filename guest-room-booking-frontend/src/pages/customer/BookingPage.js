@@ -28,10 +28,10 @@ function BookingPage() {
   useEffect(() => {
     const fetchRoomAndBookings = async () => {
       try {
-        const roomResponse = await axios.get(`http://localhost:5000/api/rooms/${roomId}`);
+        const roomResponse = await axios.get(`https://room-booker.onrender.com/api/rooms/${roomId}`);
         setRoom(roomResponse.data.data);
 
-        const bookingsResponse = await axios.get(`http://localhost:5000/api/bookings/room/${roomId}`);
+        const bookingsResponse = await axios.get(`https://room-booker.onrender.com/api/bookings/room/${roomId}`);
         const bookings = bookingsResponse.data.data;
 
         const datesToDisable = [];
