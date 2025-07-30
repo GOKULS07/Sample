@@ -15,7 +15,7 @@ function RoomDetailsPage() {
   useEffect(() => {
     const fetchRoom = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/rooms/${id}`);
+        const { data } = await axios.get(`https://room-booker.onrender.com/api/rooms/${id}`);
         setRoom(data.data);
         setLoading(false);
       } catch (err) {
