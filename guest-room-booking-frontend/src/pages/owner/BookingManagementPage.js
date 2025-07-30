@@ -38,7 +38,7 @@ function BookingManagementPage() {
   const handleUpdateStatus = async (bookingId, newStatus) => {
     if (window.confirm(`Are you sure you want to change this booking status to "${newStatus}"?`)) {
       try {
-        const { data } = await axios.put(`http://localhost:5000/api/bookings/${bookingId}/status`, { status: newStatus });
+        const { data } = await axios.put(`https://room-booker.onrender.com/api/bookings/${bookingId}/status`, { status: newStatus });
         setMessage(data.message || 'Booking status updated!');
         fetchBookings(); 
       } catch (err) {
