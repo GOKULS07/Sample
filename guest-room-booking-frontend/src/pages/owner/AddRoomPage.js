@@ -73,7 +73,7 @@ function AddRoomPage() {
           'Content-Type': 'multipart/form-data',
         },
       };
-      await axios.post('http://localhost:5000/api/rooms', roomData, config);
+      await axios.post('https://room-booker.onrender.com/api/rooms', roomData, config);
       alert('Room added successfully!');
       navigate('/owner/manage-rooms');
     } catch (err) {
