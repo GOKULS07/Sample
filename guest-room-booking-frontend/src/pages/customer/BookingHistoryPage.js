@@ -18,7 +18,7 @@ function BookingHistoryPage() {
       return;
     }
     try {
-      const { data } = await axios.get('http://localhost:5000/api/bookings/customer/me');
+      const { data } = await axios.get('https://room-booker.onrender.com/api/bookings/customer/me');
       setBookings(data.data);
       setLoading(false);
     } catch (err) {
@@ -38,7 +38,7 @@ function BookingHistoryPage() {
   const handleCancelBooking = async (bookingId) => {
     if (window.confirm('Are you sure you want to cancel this booking? This action cannot be undone.')) {
       try {
-        const { data } = await axios.put(`http://localhost:5000/api/bookings/${bookingId}/cancel`);
+        const { data } = await axios.put(`https://room-booker.onrender.com/api/bookings/${bookingId}/cancel`);
         setMessage(data.message || 'Booking cancelled successfully!');
         fetchBookings(); 
       } catch (err) {
