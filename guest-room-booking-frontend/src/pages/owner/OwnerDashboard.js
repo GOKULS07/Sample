@@ -21,11 +21,11 @@ function OwnerDashboard() {
       }
       try {
         
-        const roomsResponse = await axios.get('http://localhost:5000/api/rooms/owner-rooms/me');
+        const roomsResponse = await axios.get('https://room-booker.onrender.com/api/rooms/owner-rooms/me');
         setRoomsCount(roomsResponse.data.count);
 
         
-        const bookingsResponse = await axios.get('http://localhost:5000/api/bookings/owner/me');
+        const bookingsResponse = await axios.get('https://room-booker.onrender.com/api/bookings/owner/me');
         const allBookings = bookingsResponse.data.data;
 
         
