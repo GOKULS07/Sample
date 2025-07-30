@@ -18,7 +18,7 @@ function CustomerDashboard() {
         return;
       }
       try {
-        const { data } = await axios.get('http://localhost:5000/api/bookings/customer/me');
+        const { data } = await axios.get('https://room-booker.onrender.com/api/bookings/customer/me');
         setBookingsCount(data.count);
         setLoading(false);
       } catch (err) {
