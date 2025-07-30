@@ -27,7 +27,7 @@ function ProfilePage() {
         return;
       }
       try {
-        const { data } = await axios.get('http://localhost:5000/api/auth/me');
+        const { data } = await axios.get('https://room-booker.onrender.com/api/auth/me');
         setFormData({
           fullName: data.data.fullName || 'N/A',
           email: data.data.email,
@@ -68,7 +68,7 @@ function ProfilePage() {
     }
 
     try {
-      const { data } = await axios.put('http://localhost:5000/api/auth/profile', updateData);
+      const { data } = await axios.put('https://room-booker.onrender.com/api/auth/profile', updateData);
       setMessage(data.message || 'Profile updated successfully!');
       setFormData({ ...formData, password: '', newPassword: '' });
     } catch (err) {
