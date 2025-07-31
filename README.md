@@ -1,8 +1,3 @@
-Okay, Gokul, I understand! You need the complete README.md file in a single block so you can directly copy and paste it.
-
-Here is the full README.md content, including all the details and instructions we discussed, formatted for easy copy-pasting.
-
-Markdown
 
 # 🏨 Guest Room Booking Application
 
