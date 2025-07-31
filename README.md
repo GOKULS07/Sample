@@ -100,6 +100,7 @@ MONGO_URI=your_mongodb_atlas_connection_string_here
 PORT=5000
 JWT_SECRET=your_super_strong_random_jwt_secret_here
 BACKEND_DEPLOYED_URL=[https://room-booker.onrender.com](https://room-booker.onrender.com)
+
 MONGO_URI: Get this from your MongoDB Atlas dashboard. Remember to replace <username> and <password> with your database user's credentials. Example: mongodb+srv://user:password@cluster0.abcde.mongodb.net/?retryWrites=true&w=majority
 
 JWT_SECRET: Generate a long, random string. You can use node -e "console.log(require('crypto').randomBytes(64).toString('hex'))" in your terminal.
