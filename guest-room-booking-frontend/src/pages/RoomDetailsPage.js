@@ -84,9 +84,6 @@ function RoomDetailsPage() {
           <h3>About this Room</h3>
           <p className="room-description">{room.description || 'No description provided.'}</p> {/* Room description */}
           <div className="detail-item">
-            <strong>Location:</strong> N/A {/* Placeholder for location as it's not in schema */}
-          </div>
-          <div className="detail-item">
             <strong>Beds:</strong> {room.numberOfBeds}
           </div>
           <div className="detail-item">
