@@ -102,8 +102,4 @@ function ManageRoomsPage() {
   );
 }
 
-<<<<<<< HEAD
-export default ManageRoomsPage; // Make this component available
-=======
 export default ManageRoomsPage;
->>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

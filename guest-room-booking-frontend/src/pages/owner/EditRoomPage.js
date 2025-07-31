@@ -226,8 +226,4 @@ function EditRoomPage() {
   );
 }
 
-<<<<<<< HEAD
-export default EditRoomPage; // Making this component available
-=======
 export default EditRoomPage;
->>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

@@ -123,8 +123,4 @@ function BookingManagementPage() {
   );
 }
 
-<<<<<<< HEAD
-export default BookingManagementPage; // Make this component available
-=======
 export default BookingManagementPage;
->>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

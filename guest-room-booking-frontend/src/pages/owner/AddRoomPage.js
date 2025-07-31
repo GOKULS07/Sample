@@ -187,8 +187,4 @@ function AddRoomPage() {
   );
 }
 
-<<<<<<< HEAD
-export default AddRoomPage; // Makes this component available for use elsewhere
-=======
 export default AddRoomPage;
->>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

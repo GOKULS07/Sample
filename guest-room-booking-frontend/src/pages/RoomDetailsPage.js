@@ -113,8 +113,4 @@ function RoomDetailsPage() {
   );
 }
 
-<<<<<<< HEAD
-export default RoomDetailsPage; // Make this component available
-=======
 export default RoomDetailsPage;
->>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

@@ -65,8 +65,4 @@ function RoomListPage() {
   );
 }
 
-<<<<<<< HEAD
-export default RoomListPage; // Make this component available for use in other files
-=======
 export default RoomListPage;
->>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66
