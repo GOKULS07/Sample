@@ -88,7 +88,6 @@ Install backend dependencies:
 Bash
 
 npm install
-
 Set up Environment Variables (.env file):
 
 Create a file named .env in the guest-room-booking-backend directory (next to package.json).
@@ -101,9 +100,7 @@ MONGO_URI=your_mongodb_atlas_connection_string_here
 PORT=5000
 JWT_SECRET=your_super_strong_random_jwt_secret_here
 BACKEND_DEPLOYED_URL=[https://room-booker.onrender.com](https://room-booker.onrender.com)
-
-MONGO_URI: Get this from your MongoDB Atlas dashboard. Remember to replace <username> and <password> with your database user's credentials. Example: mongodb+srv://user:password@cluster0.abcde.mongodb.net/?
-retryWrites=true&w=majority
+MONGO_URI: Get this from your MongoDB Atlas dashboard. Remember to replace <username> and <password> with your database user's credentials. Example: mongodb+srv://user:password@cluster0.abcde.mongodb.net/?retryWrites=true&w=majority
 
 JWT_SECRET: Generate a long, random string. You can use node -e "console.log(require('crypto').randomBytes(64).toString('hex'))" in your terminal.
 
@@ -114,7 +111,6 @@ Start the backend server:
 Bash
 
 npm start
-
 You should see messages like "MongoDB Atlas Connected" and "Server running on port 5000".
 
 3. Frontend Setup
@@ -132,7 +128,6 @@ Install frontend dependencies:
 Bash
 
 npm install
-
 Configure Frontend Backend URL (.env.development for local, Vercel for deploy):
 
 Important Code Change: In all your frontend files where you make axios calls (e.g., src/contexts/AuthContext.js, src/pages/RoomListPage.js, etc.), ensure http://localhost:5000 is replaced with ${process.env.REACT_APP_BACKEND_URL}. This is how your React app will dynamically know where to send requests.
@@ -149,7 +144,6 @@ Start the frontend development server:
 Bash
 
 npm start
-
 Your application should open in your browser at http://localhost:3000.
 
 ▶️ Running the Application
