@@ -1,3 +1,4 @@
+Markdown
 
 # 🏨 Guest Room Booking Application
 
@@ -74,7 +75,6 @@ First, clone this entire project (which contains both frontend and backend folde
 ```bash
 git clone [https://github.com/GOKULS07/Room_Booker.git](https://github.com/GOKULS07/Room_Booker.git)
 cd Room_Booker
-
 2. Backend Setup
 The backend handles the API and database interactions.
 
@@ -402,8 +402,7 @@ Gokul S
 
 Email: gokuls962005@gmail.com
 
-LinkedIn: [Your LinkedIn Profile URL Here]
+LinkedIn: https://www.linkedin.com/in/gokuls07/
 
-GitHub: [Your GitHub Profile URL Here]
+GitHub: https://github.com/GOKULS07
 
-Portfolio: [Your Portfolio URL Here] (Optional)
