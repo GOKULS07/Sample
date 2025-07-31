@@ -20,11 +20,9 @@ function RoomDetailsPage() {
   useEffect(() => {
     const fetchRoom = async () => {
       try {
-        // Ask the backend for this specific room's details
-        // This hits: GET /api/rooms/:id
-        const { data } = await axios.get(`http://localhost:5000/api/rooms/${id}`);
-        setRoom(data.data); // Put the room data into our state
-        setLoading(false); // Done loading!
+        const { data } = await axios.get(`https://room-booker.onrender.com/api/rooms/${id}`);
+        setRoom(data.data);
+        setLoading(false);
       } catch (err) {
         console.error('Problem fetching room:', err);
         setError('Couldn\'t load room details. Maybe this room doesn\'t exist?'); // Friendly error message
@@ -115,4 +113,8 @@ function RoomDetailsPage() {
   );
 }
 
+<<<<<<< HEAD
 export default RoomDetailsPage; // Make this component available
+=======
+export default RoomDetailsPage;
+>>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

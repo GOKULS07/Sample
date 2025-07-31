@@ -26,15 +26,13 @@ function OwnerDashboard() {
         return;
       }
       try {
-        // First, grab how many rooms this owner has listed
-        // This hits: GET /api/rooms/owner-rooms/me (protected route)
-        const roomsResponse = await axios.get('http://localhost:5000/api/rooms/owner-rooms/me');
-        setRoomsCount(roomsResponse.data.count); // Update the room count
+        
+        const roomsResponse = await axios.get('https://room-booker.onrender.com/api/rooms/owner-rooms/me');
+        setRoomsCount(roomsResponse.data.count);
 
-        // Next, get all bookings related to this owner's rooms
-        // This hits: GET /api/bookings/owner/me (protected route)
-        const bookingsResponse = await axios.get('http://localhost:5000/api/bookings/owner/me');
-        const allBookings = bookingsResponse.data.data; // All bookings for this owner's rooms
+        
+        const bookingsResponse = await axios.get('https://room-booker.onrender.com/api/bookings/owner/me');
+        const allBookings = bookingsResponse.data.data;
 
         // Let's figure out how many upcoming bookings there are
         const now = new Date(); // Current date and time
@@ -128,4 +126,4 @@ function OwnerDashboard() {
   );
 }
 
-export default OwnerDashboard; // Make this component available
+export default OwnerDashboard;

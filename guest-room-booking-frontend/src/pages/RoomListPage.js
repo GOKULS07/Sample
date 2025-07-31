@@ -15,11 +15,9 @@ function RoomListPage() {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        // Ask our backend for all rooms
-        // This hits: GET /api/rooms (this is a public endpoint)
-        const { data } = await axios.get('http://localhost:5000/api/rooms');
-        setRooms(data.data); // Put the rooms data into our state
-        setLoading(false); // Done loading!
+        const { data } = await axios.get('https://room-booker.onrender.com/api/rooms');
+        setRooms(data.data);
+        setLoading(false);
       } catch (err) {
         console.error('Problem fetching rooms:', err); // Log any errors
         setError('Couldn\'t load rooms. Please try again later.'); // Show a user-friendly error
@@ -67,4 +65,8 @@ function RoomListPage() {
   );
 }
 
+<<<<<<< HEAD
 export default RoomListPage; // Make this component available for use in other files
+=======
+export default RoomListPage;
+>>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

@@ -91,11 +91,9 @@ function AddRoomPage() {
           // Axios automatically adds Authorization header if user is logged in (from AuthContext)
         },
       };
-      // Send a POST request to add the new room to the backend
-      // This hits: POST /api/rooms (protected, only owners can do this)
-      await axios.post('http://localhost:5000/api/rooms', roomData, config);
-      alert('Success! Your room has been added!'); // Show a success message
-      navigate('/owner/manage-rooms'); // Take the owner to their manage rooms page
+      await axios.post('https://room-booker.onrender.com/api/rooms', roomData, config);
+      alert('Room added successfully!');
+      navigate('/owner/manage-rooms');
     } catch (err) {
       console.error('Problem adding room:', err.response?.data?.message || err.message);
       // Try to get specific validation errors from the backend response
@@ -189,4 +187,8 @@ function AddRoomPage() {
   );
 }
 
+<<<<<<< HEAD
 export default AddRoomPage; // Makes this component available for use elsewhere
+=======
+export default AddRoomPage;
+>>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

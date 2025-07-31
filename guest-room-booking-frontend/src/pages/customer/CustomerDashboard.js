@@ -24,11 +24,9 @@ function CustomerDashboard() {
         return;
       }
       try {
-        // Ask our backend for bookings made by the current customer
-        // This hits: GET /api/bookings/customer/me (protected route)
-        const { data } = await axios.get('http://localhost:5000/api/bookings/customer/me');
-        setBookingsCount(data.count); // Update the bookings count
-        setLoading(false); // Done loading!
+        const { data } = await axios.get('https://room-booker.onrender.com/api/bookings/customer/me');
+        setBookingsCount(data.count);
+        setLoading(false);
       } catch (err) {
         console.error('Problem fetching customer bookings count:', err); // Log any serious errors
         setError('Couldn\'t load booking count.'); // Show a friendly error message
@@ -97,5 +95,4 @@ function CustomerDashboard() {
     </div>
   );
 }
-
-export default CustomerDashboard; // Make this component available
+export default CustomerDashboard;

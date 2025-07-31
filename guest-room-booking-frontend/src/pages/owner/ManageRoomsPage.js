@@ -24,11 +24,9 @@ function ManageRoomsPage() {
         return;
       }
       try {
-        // Ask our backend for rooms owned by the current user
-        // This hits: GET /api/rooms/owner-rooms/me (protected route)
-        const { data } = await axios.get('http://localhost:5000/api/rooms/owner-rooms/me');
-        setRooms(data.data); // Put the rooms data into our state
-        setLoading(false); // Done loading!
+        const { data } = await axios.get('https://room-booker.onrender.com/api/rooms/owner-rooms/me');
+        setRooms(data.data);
+        setLoading(false);
       } catch (err) {
         console.error('Problem fetching owner rooms:', err); // Log any serious errors
         setError(err.response?.data?.message || 'Couldn\'t load your rooms.'); // Show a friendly error message
@@ -43,12 +41,9 @@ function ManageRoomsPage() {
     // Ask for confirmation before deleting
     if (window.confirm('Are you sure you want to delete this room? This cannot be undone!')) {
       try {
-        // Send a DELETE request to remove the room from the backend
-        // This hits: DELETE /api/rooms/:roomId (protected route)
-        await axios.delete(`http://localhost:5000/api/rooms/${roomId}`);
-        alert('Room deleted successfully!'); // Show a success message
-        // Update our local state immediately to remove the room from the list without a full refresh
-        setRooms(rooms.filter(room => room._id !== roomId));
+        await axios.delete(`https://room-booker.onrender.com/api/rooms/${roomId}`);
+        alert('Room deleted successfully!');
+        setRooms(rooms.filter(room => room._id !== roomId)); 
       } catch (err) {
         console.error('Problem deleting room:', err); // Log any errors
         setError(err.response?.data?.message || 'Couldn\'t delete room.'); // Show a friendly error message
@@ -107,4 +102,8 @@ function ManageRoomsPage() {
   );
 }
 
+<<<<<<< HEAD
 export default ManageRoomsPage; // Make this component available
+=======
+export default ManageRoomsPage;
+>>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

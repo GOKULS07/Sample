@@ -37,8 +37,9 @@ function ProfilePage() {
       try {
         // Ask our backend for the logged-in user's profile
         // This hits: GET /api/auth/me (protected route)
-        const { data } = await axios.get('http://localhost:5000/api/auth/me');
+        const { data } = await axios.get('https://room-booker.onrender.com/api/auth/me');
         // Fill the form with the data we got from the server
+        const { data } = await axios.get('https://room-booker.onrender.com/api/auth/me');
         setFormData({
           fullName: data.data.fullName || 'N/A', // If backend has full name, use it; otherwise N/A
           email: data.data.email,
@@ -93,9 +94,11 @@ function ProfilePage() {
     try {
       // Send a PUT request to update the profile
       // This hits: PUT /api/auth/profile (protected route)
-      const { data } = await axios.put('http://localhost:5000/api/auth/profile', updateData);
+      const { data } = await axios.put('https://room-booker.onrender.com/api/auth/profile', updateData);
       setMessage(data.message || 'Profile updated successfully!'); // Show success message
       // Clear password fields from state after successful update for security
+      const { data } = await axios.put('https://room-booker.onrender.com/api/auth/profile', updateData);
+      setMessage(data.message || 'Profile updated successfully!');
       setFormData({ ...formData, password: '', newPassword: '' });
     } catch (err) {
       console.error('Problem updating profile:', err.response?.data?.message || err.message);
@@ -153,4 +156,8 @@ function ProfilePage() {
   );
 }
 
+<<<<<<< HEAD
 export default ProfilePage; // Making this component available
+=======
+export default ProfilePage;
+>>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

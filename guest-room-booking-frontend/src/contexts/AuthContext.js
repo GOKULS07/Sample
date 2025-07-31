@@ -74,7 +74,7 @@ export const AuthProvider = ({ children }) => {
       
       // Send a POST request to our backend's registration endpoint
       const { data } = await axios.post(
-        'http://localhost:5000/api/auth/register',
+        'https://room-booker.onrender.com/api/auth/register',
         { email: userData.email, password: userData.password, mobileNumber: userData.mobile, role: userData.role }, // User data to send
         config
       );

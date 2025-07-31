@@ -32,12 +32,10 @@ function BookingPage() {
   useEffect(() => {
     const fetchRoomAndBookings = async () => {
       try {
-        // Fetch the specific room details from our backend
-        const roomResponse = await axios.get(`http://localhost:5000/api/rooms/${roomId}`);
+        const roomResponse = await axios.get(`https://room-booker.onrender.com/api/rooms/${roomId}`);
         setRoom(roomResponse.data.data);
 
-        // Fetch all existing bookings for this room to disable those dates in the calendar
-        const bookingsResponse = await axios.get(`http://localhost:5000/api/bookings/room/${roomId}`);
+        const bookingsResponse = await axios.get(`https://room-booker.onrender.com/api/bookings/room/${roomId}`);
         const bookings = bookingsResponse.data.data;
 
         // Convert booking date ranges into a list of individual dates to disable
@@ -153,12 +151,10 @@ function BookingPage() {
     };
 
     try {
-      // Send the booking request to the backend
-      // This hits: POST /api/bookings (protected, requires customer role)
-      const { data } = await axios.post('http://localhost:5000/api/bookings', bookingData);
-      setMessage(data.message || 'Booking confirmed successfully!'); // Set success message
-      alert('Booking confirmed successfully!'); // Show native alert
-      navigate('/customer/bookings'); // Go to booking history
+      const { data } = await axios.post('https://room-booker.onrender.com/api/bookings', bookingData);
+      setMessage(data.message || 'Booking confirmed successfully!');
+      alert('Booking confirmed successfully!');
+      navigate('/customer/bookings');
     } catch (err) {
       console.error('Error confirming booking:', err.response?.data?.message || err.message);
       setError(err.response?.data?.message || 'Failed to confirm booking.'); // Set error message

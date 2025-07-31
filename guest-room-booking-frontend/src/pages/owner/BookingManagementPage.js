@@ -24,11 +24,9 @@ function BookingManagementPage() {
       return;
     }
     try {
-      // Ask our backend for bookings related to this owner's rooms
-      // This hits: GET /api/bookings/owner/me (protected route)
-      const { data } = await axios.get('http://localhost:5000/api/bookings/owner/me');
-      setBookings(data.data); // Put the bookings data into our state
-      setLoading(false); // Done loading!
+      const { data } = await axios.get('https://room-booker.onrender.com/api/bookings/owner/me');
+      setBookings(data.data);
+      setLoading(false);
     } catch (err) {
       console.error('Problem fetching owner bookings:', err); // Log any serious errors
       setError(err.response?.data?.message || 'Failed to load bookings.'); // Show a friendly error message
@@ -50,11 +48,9 @@ function BookingManagementPage() {
     // Ask for confirmation before changing status
     if (window.confirm(`Are you sure you want to change this booking status to "${newStatus}"?`)) {
       try {
-        // Send a PUT request to update the booking status on the backend
-        // This hits: PUT /api/bookings/:bookingId/status (protected route)
-        const { data } = await axios.put(`http://localhost:5000/api/bookings/${bookingId}/status`, { status: newStatus });
-        setMessage(data.message || 'Booking status updated!'); // Show a success message
-        fetchBookings(); // Re-fetch all bookings to show the updated status in the list
+        const { data } = await axios.put(`https://room-booker.onrender.com/api/bookings/${bookingId}/status`, { status: newStatus });
+        setMessage(data.message || 'Booking status updated!');
+        fetchBookings(); 
       } catch (err) {
         console.error('Problem updating status:', err); // Log any errors
         setError(err.response?.data?.message || 'Failed to update status.'); // Show a friendly error message
@@ -127,4 +123,8 @@ function BookingManagementPage() {
   );
 }
 
+<<<<<<< HEAD
 export default BookingManagementPage; // Make this component available
+=======
+export default BookingManagementPage;
+>>>>>>> 9ff74573d08bcf5d1c1b32543741782078399b66

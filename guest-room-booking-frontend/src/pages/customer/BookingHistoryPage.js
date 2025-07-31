@@ -24,11 +24,9 @@ function BookingHistoryPage() {
       return;
     }
     try {
-      // Ask our backend for bookings made by the current customer
-      // This hits: GET /api/bookings/customer/me (protected route)
-      const { data } = await axios.get('http://localhost:5000/api/bookings/customer/me');
-      setBookings(data.data); // Put the bookings data into our state
-      setLoading(false); // Done loading!
+      const { data } = await axios.get('https://room-booker.onrender.com/api/bookings/customer/me');
+      setBookings(data.data);
+      setLoading(false);
     } catch (err) {
       console.error('Problem fetching customer bookings:', err); // Log any serious errors
       setError(err.response?.data?.message || 'Couldn\'t load your booking history.'); // Show a friendly error message
@@ -50,11 +48,9 @@ function BookingHistoryPage() {
     // Ask for confirmation before canceling
     if (window.confirm('Are you sure you want to cancel this booking? This action cannot be undone.')) {
       try {
-        // Send a PUT request to cancel the booking on the backend
-        // This hits: PUT /api/bookings/:bookingId/cancel (protected route)
-        const { data } = await axios.put(`http://localhost:5000/api/bookings/${bookingId}/cancel`);
-        setMessage(data.message || 'Booking cancelled successfully!'); // Show a success message
-        fetchBookings(); // Re-fetch all bookings to show the updated status in the list
+        const { data } = await axios.put(`https://room-booker.onrender.com/api/bookings/${bookingId}/cancel`);
+        setMessage(data.message || 'Booking cancelled successfully!');
+        fetchBookings(); 
       } catch (err) {
         console.error('Problem cancelling booking:', err); // Log any errors
         setError(err.response?.data?.message || 'Couldn\'t cancel booking.'); // Show a friendly error message
@@ -111,4 +107,4 @@ function BookingHistoryPage() {
   );
 }
 
-export default BookingHistoryPage; // Make this component available
+export default BookingHistoryPage;
